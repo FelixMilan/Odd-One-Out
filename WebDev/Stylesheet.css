@@ -7,6 +7,7 @@ body {
 .navbar {
     overflow: hidden;
     background-color: rgb(214, 129, 31);
+    max-height: 10px;
   }
   
 .navbar a {
