@@ -3,7 +3,7 @@ nav ul{
 	margin: 0;
 	padding: 0;
 	overflow: hidden;
-	background-color: rgb(211, 44, 44);
+	background-color: rgb(226, 118, 45);
 }
 nav li{
 	display: inline-block;
@@ -17,6 +17,23 @@ li a {
     padding: 10px 14px;
     text-decoration: none;
   }
-  li a:hover {
+li a:hover {
+    background-color: silver;
+  }
+
+
+.navbar {
+	display: inline-block;
+	width: 15%;
+	float: center;
+}
+.navbarbuttonitems a{
+    display: block;
+    color: maroon;
+    text-align: center;
+    padding: 10px 14px;
+    text-decoration: none;
+  }
+.navbarbuttonitems a:hover {
     background-color: silver;
   }
