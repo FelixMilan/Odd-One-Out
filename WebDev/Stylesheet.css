@@ -67,4 +67,5 @@ body {
 
   .logo-image{
       display: inline-block;
+      max-height: 100px;
   }
