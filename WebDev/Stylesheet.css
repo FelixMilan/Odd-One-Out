@@ -62,7 +62,7 @@ body {
   }
   
   .dropdown:hover .dropdown-content {
-    display: block;
+    display: inline-block;
   }
 
   .logo-image{
