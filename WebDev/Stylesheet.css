@@ -70,6 +70,10 @@ body {
       position: center;
   }
 
+  .formsection{
+      padding: 20px 0px 20px;
+  }
+
   .footer{
       position:bottom;
   }
