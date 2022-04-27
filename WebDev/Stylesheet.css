@@ -19,9 +19,15 @@ body {
     text-decoration: none;
   }
 
-  .pagebtn{
-      float: left;
-      color: white;
+  .pagebtn .pagebutton{
+    font-size: 16px;  
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
   }
 
   .logo-image{
