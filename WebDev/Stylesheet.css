@@ -74,14 +74,14 @@ body {
       padding: 20px 0px 20px;
   }
 
-  .footer{
-      position:bottom;
+  footer{
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      background-color: rgb(214, 129, 31);
+
   }
 
-  #name{
-    border: 20px 0px 20px;
-  }
-
-  #roomid{
+  #name, #roomid{
     border: 20px 0px 20px;
   }
