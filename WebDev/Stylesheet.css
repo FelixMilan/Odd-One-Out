@@ -7,7 +7,6 @@ body {
 .navbar {
     overflow: hidden;
     background-color: rgb(214, 129, 31);
-    height: 100px;
   }
   
 .navbar a {
@@ -21,7 +20,7 @@ body {
   
   .dropdown {
     float: left;
-    overflow: visible;
+    overflow: hidden;
   }
   
   .dropdown .dropbtn {
