@@ -64,3 +64,7 @@ body {
   .dropdown:hover .dropdown-content {
     display: block;
   }
+
+  .logo-image{
+      display: inline-block;
+  }
