@@ -69,3 +69,7 @@ body {
       display: inline-block;
       position: center;
   }
+
+  .footer{
+      position:bottom;
+  }
