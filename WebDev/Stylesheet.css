@@ -8,7 +8,7 @@ body {
   }
   
 .navbar a {
-    float: right;
+    float: none;
     font-size: 36px;
     color: white;
     text-align: center;
