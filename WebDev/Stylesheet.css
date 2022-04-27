@@ -77,3 +77,11 @@ body {
   .footer{
       position:bottom;
   }
+
+  #name{
+    padding: 20px 0px 20px;
+  }
+
+  #roomid{
+    padding: 20px 0px 20px;
+  }
