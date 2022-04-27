@@ -69,7 +69,7 @@ body {
   }
 
   .logo-image{
-      position: absolute;
+      position: relative;
   }
 
   .formsection{
