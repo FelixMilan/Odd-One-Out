@@ -20,7 +20,7 @@ body {
   }
   
   .dropdown {
-    float: left;
+    float: none;
     overflow: hidden;
   }
   
