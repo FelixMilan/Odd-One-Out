@@ -78,10 +78,6 @@ body {
       position:bottom;
   }
 
-  #name{
-    padding: 20px 0px 20px;
-  }
-
-  #roomid{
+  label{
     padding: 20px 0px 20px;
   }
