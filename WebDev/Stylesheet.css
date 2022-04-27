@@ -86,3 +86,7 @@ body {
   #name, #roomid{
     border: 20px 0px 20px;
   }
+
+  .label{
+    border: 20px 0px 20px;
+  }
