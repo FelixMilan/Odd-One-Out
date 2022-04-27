@@ -67,7 +67,7 @@ body {
 
   .logo-image{
       display: inline;
-      position: center;
+      position: absolute;
   }
 
   .formsection{
