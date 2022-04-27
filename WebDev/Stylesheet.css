@@ -8,5 +8,15 @@ nav ul{
 nav li{
 	display: inline-block;
 	width: 15%;
-	float: left;
+	float: center;
 }
+li a {
+    display: block;
+    color: maroon;
+    text-align: center;
+    padding: 10px 14px;
+    text-decoration: none;
+  }
+  li a:hover {
+    background-color: silver;
+  }
