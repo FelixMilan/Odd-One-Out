@@ -20,20 +20,3 @@ li a {
 li a:hover {
     background-color: silver;
   }
-
-
-.navbar {
-	display: inline-block;
-	width: 15%;
-	float: center;
-}
-.navbarbuttonitems a{
-    display: block;
-    color: maroon;
-    text-align: center;
-    padding: 10px 14px;
-    text-decoration: none;
-  }
-.navbarbuttonitems a:hover {
-    background-color: silver;
-  }
