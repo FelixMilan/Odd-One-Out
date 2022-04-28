@@ -3,21 +3,6 @@ body {
     margin: 0px;
     text-align: center;
   }
-  
-.navbar {
-    overflow: hidden;
-    background-color: rgb(214, 129, 31);
-    height: 100px;
-  }
-  
-.navbar a {
-    float: left;
-    font-size: 36px;
-    color: white;
-    text-align: center;
-    padding: 10px 10px;
-    text-decoration: none;
-  }
 
   .pagebtn .pagebutton{
     font-size: 16px;  
