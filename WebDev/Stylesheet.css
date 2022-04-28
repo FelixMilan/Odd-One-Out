@@ -54,3 +54,7 @@ body {
   .label{
     padding: 20px 0px 20px;
   }
+
+  .maincontent{
+    border: 50px 50px;
+  }
