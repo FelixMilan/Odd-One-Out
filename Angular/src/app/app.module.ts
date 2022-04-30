@@ -7,6 +7,11 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { HelpComponent } from './help/help.component';
 import { MediaComponent } from './media/media.component';
+import { LobbyPageComponent } from './lobby-page/lobby-page.component';
+import { RandomisorStageComponent } from './randomisor-stage/randomisor-stage.component';
+import { DrawStageComponent } from './draw-stage/draw-stage.component';
+import { VoteStageComponent } from './vote-stage/vote-stage.component';
+import { JoinPageComponent } from './join-page/join-page.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +19,12 @@ import { MediaComponent } from './media/media.component';
     HomeComponent,
     AboutComponent,
     HelpComponent,
-    MediaComponent
+    MediaComponent,
+    LobbyPageComponent,
+    RandomisorStageComponent,
+    DrawStageComponent,
+    VoteStageComponent,
+    JoinPageComponent
   ],
   imports: [
     BrowserModule,
