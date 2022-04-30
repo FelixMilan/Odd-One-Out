@@ -1,6 +1,6 @@
 import { Player } from "./player";
 
-let namePool!: string[];
+let namePool: string[];
 
 export let players: Player[] = [
     new Player("David", ""),

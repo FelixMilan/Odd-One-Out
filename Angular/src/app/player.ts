@@ -1,6 +1,6 @@
 export class Player {
-    name!: string;
-    assignedName!: string;
+    name: string;
+    assignedName: string;
   
     constructor(name: string, assignedName: string) {
       this.name = name;
