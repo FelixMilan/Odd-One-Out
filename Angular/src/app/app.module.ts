@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService } from './in-memory-data.service';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +15,8 @@ import { RandomisorStageComponent } from './randomisor-stage/randomisor-stage.co
 import { DrawStageComponent } from './draw-stage/draw-stage.component';
 import { VoteStageComponent } from './vote-stage/vote-stage.component';
 import { JoinPageComponent } from './join-page/join-page.component';
+import { GameComponent } from './game/game.component';
+import { GameInputStageComponent } from './game-input-stage/game-input-stage.component';
 
 @NgModule({
   declarations: [
@@ -24,11 +29,18 @@ import { JoinPageComponent } from './join-page/join-page.component';
     RandomisorStageComponent,
     DrawStageComponent,
     VoteStageComponent,
-    JoinPageComponent
+    JoinPageComponent,
+    GameComponent,
+    GameInputStageComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+
+    HttpClientInMemoryWebApiModule.forRoot(
+      InMemoryDataService, { dataEncapsulation: false }
+    )
   ],
   providers: [],
   bootstrap: [AppComponent]
