@@ -12,6 +12,7 @@
     padding: 25px;
     background: #e2e2e2;
     font-weight: bold;
+    width: 75px;
 }
 
 .mytabs .tab {
@@ -35,8 +36,10 @@
 
 .headshot {
     width: 400px;
+    height: 400px;
     margin: 30px 30px 30px 0;
     float: left;
+    object-fit: cover;
 }
 
 .tabtext{
