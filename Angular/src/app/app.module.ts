@@ -34,9 +34,6 @@ import { GameComponent } from './game/game.component';
     AppRoutingModule,
     HttpClientModule,
 
-    HttpClientInMemoryWebApiModule.forRoot(
-      InMemoryDataService, { dataEncapsulation: false }
-    )
   ],
   providers: [],
   bootstrap: [AppComponent]
