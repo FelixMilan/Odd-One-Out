@@ -11,12 +11,10 @@ import { AboutComponent } from './about/about.component';
 import { HelpComponent } from './help/help.component';
 import { MediaComponent } from './media/media.component';
 import { LobbyPageComponent } from './lobby-page/lobby-page.component';
-import { RandomisorStageComponent } from './randomisor-stage/randomisor-stage.component';
 import { DrawStageComponent } from './draw-stage/draw-stage.component';
 import { VoteStageComponent } from './vote-stage/vote-stage.component';
 import { JoinPageComponent } from './join-page/join-page.component';
 import { GameComponent } from './game/game.component';
-import { GameInputStageComponent } from './game-input-stage/game-input-stage.component';
 
 @NgModule({
   declarations: [
@@ -26,12 +24,10 @@ import { GameInputStageComponent } from './game-input-stage/game-input-stage.com
     HelpComponent,
     MediaComponent,
     LobbyPageComponent,
-    RandomisorStageComponent,
     DrawStageComponent,
     VoteStageComponent,
     JoinPageComponent,
     GameComponent,
-    GameInputStageComponent
   ],
   imports: [
     BrowserModule,
