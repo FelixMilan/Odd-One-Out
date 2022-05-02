@@ -9,7 +9,6 @@ import { PlayerService } from '../player.service';
 })
 export class GameComponent implements OnInit {
 
-  players: Player[];
 
   constructor(private playerService: PlayerService) { }
 
