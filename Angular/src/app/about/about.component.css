@@ -4,6 +4,7 @@
     flex-wrap: wrap;
     margin: 50px auto;
     justify-content: center;
+    height: 100%
 }
 .mytabs input[type="radio"] {
     display: none;
