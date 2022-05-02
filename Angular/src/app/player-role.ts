@@ -1,3 +1,3 @@
 export enum PlayerRole {
-    ODDONEOUT
+    ODDONEOUT = 0
 }

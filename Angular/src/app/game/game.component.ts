@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Player } from '../player';
+import { PlayerService } from '../player.service';
 
 @Component({
   selector: 'app-game',
@@ -7,10 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GameComponent implements OnInit {
 
-  constructor() { }
+  players: Player[];
+
+  constructor(private playerService: PlayerService) { }
 
   ngOnInit(): void {
-    
+    this.getPlayers();
+  }
+  getPlayers() {
+    this.playerService.getPlayers()
+    .subscribe(players => (this.players = players));
   }
 
 }
