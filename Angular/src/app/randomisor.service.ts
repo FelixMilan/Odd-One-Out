@@ -1,24 +1,35 @@
 import { Injectable } from '@angular/core';
 
-import { PlayerService } from './player.service';
-
-import { namePool } from './name-pool';
+import { NAMEPOOL } from './name-pool';
+import { PlayerRole } from './player-role';
+import { Player } from './player';
+import { Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RandomisorService {
 
-  setOddOneOut() {
+  namePool: string[] = [];
+
+  setOddOneOut(players: Player[]): Player[] {
+    let chosenIndex: number = this.getRandomInt(0, players.length);
+
+    players[chosenIndex].role = PlayerRole.ODDONEOUT;
+    return players;
+  }
+
+  getNamePool(): void {
+    let namePool = of(NAMEPOOL);
+    namePool.subscribe(
+      namePool => this.namePool = namePool
+    );
+  }
+
+  setChosenName(): void {
+    let chosenIndex: number = this.getRandomInt(0, this.namePool.length);
+
     
-  }
-
-  updatePlayers() {
-
-  }
-
-  getPlayers() {
-    return this.playerService.getPlayers;
   }
 
   getRandomInt(min: number, max: number): number {
@@ -27,5 +38,5 @@ export class RandomisorService {
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-  constructor(private playerService: PlayerService) { }
+  constructor() { }
 }

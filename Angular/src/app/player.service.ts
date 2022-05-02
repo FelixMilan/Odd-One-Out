@@ -10,9 +10,11 @@ import { PLAYERS } from './players';
 })
 export class PlayerService {
 
-  getPlayers(): Observable<Player[]> {
-    const players = of(PLAYERS);
-    return players;
+  players: Player[] = [];
+
+  getPlayers(): void {
+    let players = of(PLAYERS);
+    players.subscribe(players => this.players = players);
   }
 
   constructor() { }
