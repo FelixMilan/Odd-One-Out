@@ -1,0 +1,3 @@
+export enum PlayerRole {
+    ODDONEOUT
+}
