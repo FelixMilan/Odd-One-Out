@@ -1,8 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Player } from '../player';
-import { PlayerRole } from '../player-role';
-import { PlayerService } from '../player.service';
-import { RandomisorService } from '../randomisor.service';
+import { GameService } from '../game.service';
 
 
 @Component({
@@ -12,36 +9,28 @@ import { RandomisorService } from '../randomisor.service';
 })
 export class GameComponent implements OnInit {
 
-  players: Player[] = [];
-  chosenName?: string;
-  oddOneOutChosenName?: string;
-
-  constructor(private playerService: PlayerService, 
-    private randomisorService: RandomisorService) { }
+  constructor(private gameService: GameService) { }
 
   ngOnInit(): void {
     this.getPlayers;
     this.getNamePool;
     this.setOddOneOut;
+    this.chooseNamesFromPool;
   }
 
   getPlayers(): void {
-    this.playerService.getPlayers()
-    .subscribe(players => this.players = players);
+    this.gameService.getPlayers;
   }
   
   getNamePool(): void {
-    this.randomisorService.getNamePool();
+    this.gameService.getNamePool();
   }
 
   setOddOneOut(): void {
-    let rand = this.randomisorService.getRandomInt(0, this.players.length);
-    
-    this.players[rand].role = PlayerRole.ODDONEOUT;
-
-    this.playerService.updatePlayer(this.players[rand])
-    .subscribe();
+    this.gameService.setOddOneOut;
   }
 
-
+  chooseNamesFromPool(): void {
+    this.gameService.chooseNamesFromPool;
+  }
 }

@@ -1,4 +1,4 @@
 export interface Name {
     id: number;
-    name: String;
+    name: string;
 }
