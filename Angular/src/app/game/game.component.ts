@@ -14,6 +14,7 @@ export class GameComponent implements OnInit {
 
   players: Player[] = [];
   chosenName?: string;
+  oddOneOutChosenName?: string;
 
   constructor(private playerService: PlayerService, 
     private randomisorService: RandomisorService) { }
@@ -42,5 +43,5 @@ export class GameComponent implements OnInit {
     .subscribe();
   }
 
-  
+
 }

@@ -15,6 +15,8 @@ import { DrawStageComponent } from './draw-stage/draw-stage.component';
 import { VoteStageComponent } from './vote-stage/vote-stage.component';
 import { JoinPageComponent } from './join-page/join-page.component';
 import { GameComponent } from './game/game.component';
+import { CanvasModule } from '@ng-web-apis/canvas';
+import { SketchComponent } from './sketch/sketch.component';
 
 @NgModule({
   declarations: [
@@ -28,8 +30,10 @@ import { GameComponent } from './game/game.component';
     VoteStageComponent,
     JoinPageComponent,
     GameComponent,
+    SketchComponent,
   ],
   imports: [
+    CanvasModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
