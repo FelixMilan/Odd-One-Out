@@ -1,27 +1,26 @@
 import { Injectable } from '@angular/core';
-
-import { NAMEPOOL } from './name-pool';
-import { PlayerRole } from './player-role';
-import { Player } from './player';
-import { Observable, of } from 'rxjs';
-import { PlayerService } from './player.service';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Name } from './name';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RandomisorService {
 
-  namePool: String[] = [];
+  private url = 'api/namePool';
+  namePool: Name[] = [];
+  httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  };
 
   getNamePool(): void {
-    let namePool = of(NAMEPOOL);
+    let namePool = this.http.get<Name[]>(this.url);
     namePool.subscribe(namePool => this.namePool = namePool);
   }
 
-  setChosenName(): void {
+  getRandomNameFromPool(): Name {
     let chosenIndex: number = this.getRandomInt(0, this.namePool.length);
-
-    //for (let player of players)
+    return this.namePool[chosenIndex];
   }
 
   getRandomInt(min: number, max: number): number {
@@ -30,5 +29,5 @@ export class RandomisorService {
     return Math.floor(Math.random() * (max - min + 1) + min);
   }
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 }

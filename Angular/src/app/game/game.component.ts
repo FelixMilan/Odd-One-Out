@@ -4,6 +4,7 @@ import { PlayerRole } from '../player-role';
 import { PlayerService } from '../player.service';
 import { RandomisorService } from '../randomisor.service';
 
+
 @Component({
   selector: 'app-game',
   templateUrl: './game.component.html',
@@ -12,6 +13,7 @@ import { RandomisorService } from '../randomisor.service';
 export class GameComponent implements OnInit {
 
   players: Player[] = [];
+  chosenName?: string;
 
   constructor(private playerService: PlayerService, 
     private randomisorService: RandomisorService) { }
@@ -32,19 +34,13 @@ export class GameComponent implements OnInit {
   }
 
   setOddOneOut(): void {
-    let rand = this.getRandomInt(0, this.players.length);
+    let rand = this.randomisorService.getRandomInt(0, this.players.length);
     
     this.players[rand].role = PlayerRole.ODDONEOUT;
 
     this.playerService.updatePlayer(this.players[rand])
-    .subscribe(updatedPlayer => {
-      this.players[rand] = updatedPlayer;
-    });
+    .subscribe();
   }
 
-  getRandomInt(min: number, max: number): number {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min + 1) + min);
-  }
+  
 }

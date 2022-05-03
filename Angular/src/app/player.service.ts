@@ -1,24 +1,27 @@
 import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
 
 import { Player } from './player';
-import { PLAYERS } from './players';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PlayerService {
 
+  private url: string = 'api/players';
+  httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  };
+
   getPlayers(): Observable<Player[]> {
-    let players = of(PLAYERS);
-    return players;
+    return this.http.get<Player[]>(this.url);
   }
 
   updatePlayer(player: Player): Observable<Player> {
-    let updatedPlayer = of(player);
-    return updatedPlayer;
+    return this.http.put<Player>(`${this.url}/${player.id}`, player, this.httpOptions);
   }
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 }
