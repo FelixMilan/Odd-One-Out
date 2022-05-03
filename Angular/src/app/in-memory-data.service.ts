@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Name } from './name';
 import { Player } from './player';
+import { Sketch } from './sketch';
 
 @Injectable({
   providedIn: 'root'
@@ -21,6 +22,12 @@ export class InMemoryDataService {
       {id: 4, name: 'Taylor Swift'}
     ];
 
-    return {players, namePool};
+    let sketches: Sketch[] = [];
+
+    return {players, namePool, sketches};
+  }
+
+  genId(sketches: Sketch[]): number {
+    return sketches.length > 0 ? Math.max(...sketches.map(sketch => sketch.id)) + 1 : 0;
   }
 }
