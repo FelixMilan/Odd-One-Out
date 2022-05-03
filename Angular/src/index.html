@@ -8,26 +8,40 @@
   <link rel="stylesheet" href="assets/Stylesheet.css">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  <script>
+    function openNav() {
+      document.getElementById("myNav").style.height = "100%";
+    }
+    
+    function closeNav() {
+      document.getElementById("myNav").style.height = "0%";
+    }
+    </script>
+
 </head>
 <body>
-  
 
  <!-- header --> 
  <header>
     <!-- navbar -->
     <div class="navbar">
       <div class="dropdown">
-        <button class="dropbtn">MORE 
-        </button>
-        <div class="dropdown-content">
-          <a href="/home" routerLink="home">HOME</a>
-          <a href="/about" routerLink="about">ABOUT US</a>
-          <a href="/help" routerLink="help">HELP</a>
-          <a href="/media" routerLink="media">MEDIA</a>
-        </div>
+        <span class="dropbtn" style="cursor:pointer" onclick="openNav()">&#129095; MORE &#129095;</span>
       </div> 
     </div>
- </header> 
+ </header>
+
+ <div id="myNav" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&#129093; LESS &#129093;</a>
+  <div class="overlay-content">
+    <a href="/home" routerLink="home">HOME</a>
+    <a href="/about" routerLink="about">ABOUT US</a>
+    <a href="/help" routerLink="help">HELP</a>
+    <a href="/media" routerLink="media">MEDIA</a>
+  </div>
+</div>
+
 
  <!-- <app-root></app-root> -->
  <app-root></app-root>
@@ -36,7 +50,7 @@
   <footer class="footer">
   
     </div>
-    <p class="footermessage">Created by <a href="https://i.kym-cdn.com/photos/images/original/000/759/181/cc1.gif" target="_blank">Felix, Jason, Jordan and Tudor</a></p>
+    <h3 class="footermessage"><a href="https://github.com/FelixMilan/Odd-One-Out" target="_blank">Check out the repository!</a></h3>
   </footer>
 
 </body>

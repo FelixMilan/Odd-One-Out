@@ -12,4 +12,8 @@ export class MediaComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  ngAfterViewInit(): void {
+    (<any>window).twttr.widgets.load();
+}
+
 }
