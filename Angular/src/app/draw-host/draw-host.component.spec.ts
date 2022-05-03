@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SketchComponent } from './sketch.component';
+import { DrawHostComponent } from './draw-host.component';
 
-describe('SketchComponent', () => {
-  let component: SketchComponent;
-  let fixture: ComponentFixture<SketchComponent>;
+describe('DrawHostComponent', () => {
+  let component: DrawHostComponent;
+  let fixture: ComponentFixture<DrawHostComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SketchComponent ]
+      declarations: [ DrawHostComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SketchComponent);
+    fixture = TestBed.createComponent(DrawHostComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

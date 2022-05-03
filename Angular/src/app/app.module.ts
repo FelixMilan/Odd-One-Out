@@ -11,12 +11,15 @@ import { AboutComponent } from './about/about.component';
 import { HelpComponent } from './help/help.component';
 import { MediaComponent } from './media/media.component';
 import { LobbyPageComponent } from './lobby-page/lobby-page.component';
-import { DrawStageComponent } from './draw-stage/draw-stage.component';
-import { VoteStageComponent } from './vote-stage/vote-stage.component';
 import { JoinPageComponent } from './join-page/join-page.component';
 import { GameComponent } from './game/game.component';
 import { CanvasModule } from '@ng-web-apis/canvas';
-import { SketchComponent } from './sketch/sketch.component';
+import { VoteClientComponent } from './vote-client/vote-client.component';
+import { VoteHostComponent } from './vote-host/vote-host.component';
+import { DrawClientComponent } from './draw-client/draw-client.component';
+import { DrawHostComponent } from './draw-host/draw-host.component';
+import { LeaderboardHostComponent } from './leaderboard-host/leaderboard-host.component';
+import { LeaderboardClientComponent } from './leaderboard-client/leaderboard-client.component';
 
 @NgModule({
   declarations: [
@@ -26,11 +29,14 @@ import { SketchComponent } from './sketch/sketch.component';
     HelpComponent,
     MediaComponent,
     LobbyPageComponent,
-    DrawStageComponent,
-    VoteStageComponent,
     JoinPageComponent,
     GameComponent,
-    SketchComponent,
+    VoteClientComponent,
+    VoteHostComponent,
+    DrawClientComponent,
+    DrawHostComponent,
+    LeaderboardHostComponent,
+    LeaderboardClientComponent,
   ],
   imports: [
     CanvasModule,

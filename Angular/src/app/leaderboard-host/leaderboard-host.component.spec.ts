@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DrawStageComponent } from './draw-stage.component';
+import { LeaderboardHostComponent } from './leaderboard-host.component';
 
-describe('DrawStageComponent', () => {
-  let component: DrawStageComponent;
-  let fixture: ComponentFixture<DrawStageComponent>;
+describe('LeaderboardHostComponent', () => {
+  let component: LeaderboardHostComponent;
+  let fixture: ComponentFixture<LeaderboardHostComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DrawStageComponent ]
+      declarations: [ LeaderboardHostComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DrawStageComponent);
+    fixture = TestBed.createComponent(LeaderboardHostComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
