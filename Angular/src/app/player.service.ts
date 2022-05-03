@@ -10,11 +10,14 @@ import { PLAYERS } from './players';
 })
 export class PlayerService {
 
-  players: Player[] = [];
-
-  getPlayers(): void {
+  getPlayers(): Observable<Player[]> {
     let players = of(PLAYERS);
-    players.subscribe(players => this.players = players);
+    return players;
+  }
+
+  updatePlayer(player: Player): Observable<Player> {
+    let updatedPlayer = of(player);
+    return updatedPlayer;
   }
 
   constructor() { }
