@@ -9,15 +9,16 @@
     display: none;
 }
 .mytabs label {
-    padding: 25px;
+    padding: 25px 0px;
     background: #e2e2e2;
     font-weight: bold;
-    width: 75px;
+    width: 25%;
 }
+
 
 .mytabs .tab {
     width: 100%;
-    padding: 20px;
+    padding: 20px 10%;
     background: rgb(214, 129, 31);
     order: 1;
     display: none;
@@ -48,4 +49,8 @@
 
 p{
     font-size: 20px;
+}
+
+.abouttext{
+    margin: 25px;
 }
