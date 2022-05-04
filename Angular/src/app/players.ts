@@ -1,4 +1,8 @@
+import { PlayerRole } from './player-role';
 import { Player } from './player';
+
+
+
 
 export let PLAYERS: Player[] = [
     { id: 1, name: 'David' },

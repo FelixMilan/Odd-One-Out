@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./vote-client.component.css']
 })
 export class VoteClientComponent implements OnInit {
-
+  title = 'vote-client';
   constructor() { }
 
   ngOnInit(): void {

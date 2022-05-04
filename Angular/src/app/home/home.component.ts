@@ -1,3 +1,4 @@
+import { prepareSyntheticPropertyName } from '@angular/compiler/src/render3/util';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -13,3 +14,4 @@ export class HomeComponent implements OnInit {
   }
 
 }
+
