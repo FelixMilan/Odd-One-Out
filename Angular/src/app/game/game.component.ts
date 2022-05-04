@@ -4,10 +4,10 @@ import { GameService } from '../game.service';
 
 @Component({
   selector: 'app-game',
-  templateUrl: './game-host.component.html',
-  styleUrls: ['./game-host.component.css']
+  templateUrl: './game.component.html',
+  styleUrls: ['./game.component.css']
 })
-export class GameHostComponent implements OnInit {
+export class GameComponent implements OnInit {
 
   constructor(private gameService: GameService) { }
 

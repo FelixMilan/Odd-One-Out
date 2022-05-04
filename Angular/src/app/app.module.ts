@@ -12,7 +12,7 @@ import { HelpComponent } from './help/help.component';
 import { MediaComponent } from './media/media.component';
 import { LobbyPageComponent } from './lobby-page/lobby-page.component';
 import { JoinPageComponent } from './join-page/join-page.component';
-import { GameHostComponent } from './game-host/game-host.component';
+import { GameComponent } from './game/game.component';
 import { VoteClientComponent } from './vote-client/vote-client.component';
 import { VoteHostComponent } from './vote-host/vote-host.component';
 import { DrawClientComponent } from './draw-client/draw-client.component';
@@ -22,7 +22,6 @@ import { LeaderboardClientComponent } from './leaderboard-client/leaderboard-cli
 import { WritingScreenClientComponent } from './writing-screen-client/writing-screen-client.component';
 import { WritingScreenHostComponent } from './writing-screen-host/writing-screen-host.component';
 import { VoteDrawerComponent } from './vote-drawer/vote-drawer.component';
-import { GameClientComponent } from './game-client/game-client.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +32,7 @@ import { GameClientComponent } from './game-client/game-client.component';
     MediaComponent,
     LobbyPageComponent,
     JoinPageComponent,
-    GameHostComponent,
+    GameComponent,
     VoteClientComponent,
     VoteHostComponent,
     DrawClientComponent,
@@ -43,7 +42,6 @@ import { GameClientComponent } from './game-client/game-client.component';
     WritingScreenClientComponent,
     WritingScreenHostComponent,
     VoteDrawerComponent,
-    GameClientComponent,
   ],
   imports: [
     BrowserModule,
