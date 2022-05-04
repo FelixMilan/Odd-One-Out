@@ -2,7 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { SignaturePad } from 'angular2-signaturepad';
 
 @Component({
-  selector: 'app-root',
+  selector: 'app-drawing-canvas',
   templateUrl: './drawing-canvas.component.html',
   styleUrls: ['./drawing-canvas.component.css']
 })
