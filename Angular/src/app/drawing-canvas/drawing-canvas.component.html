@@ -1,0 +1,19 @@
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div id="signature-pad" class="m-signature-pad">
+          <div class="m-signature-pad-body">
+            <signature-pad [options]="signaturePadOptions" id="signatureCanvas">
+  
+            </signature-pad>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12">
+          <button class="btn btn-primary"(click)="drawComplete()">Save</button>
+          <button class="btn btn-danger"(click)="drawClear()">Clear</button>
+          <button class="btn btn-primary"(click)="colorRed()">Red</button>
+        </div>
+      
+      </div>
+  </div>

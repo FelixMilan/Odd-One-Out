@@ -22,6 +22,8 @@ import { LeaderboardClientComponent } from './leaderboard-client/leaderboard-cli
 import { WritingScreenClientComponent } from './writing-screen-client/writing-screen-client.component';
 import { WritingScreenHostComponent } from './writing-screen-host/writing-screen-host.component';
 import { VoteDrawerComponent } from './vote-drawer/vote-drawer.component';
+import { DrawingCanvasComponent } from './drawing-canvas/drawing-canvas.component';
+import { SignaturePadModule } from 'angular2-signaturepad';
 
 @NgModule({
   declarations: [
@@ -42,11 +44,13 @@ import { VoteDrawerComponent } from './vote-drawer/vote-drawer.component';
     WritingScreenClientComponent,
     WritingScreenHostComponent,
     VoteDrawerComponent,
+    DrawingCanvasComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    SignaturePadModule,
 
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }
