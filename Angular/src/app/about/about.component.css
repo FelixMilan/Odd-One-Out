@@ -10,14 +10,16 @@
     display: none;
 }
 .mytabs label {
-    padding: 25px;
+    padding: 25px 0px;
     background: #e2e2e2;
     font-weight: bold;
+    width: 25%;
 }
+
 
 .mytabs .tab {
     width: 100%;
-    padding: 20px;
+    padding: 20px 10%;
     background: rgb(214, 129, 31);
     order: 1;
     display: none;
@@ -36,10 +38,20 @@
 
 .headshot {
     width: 400px;
+    height: 400px;
     margin: 30px 30px 30px 0;
     float: left;
+    object-fit: cover;
 }
 
 .tabtext{
     display: inline;
+}
+
+p{
+    font-size: 20px;
+}
+
+.abouttext{
+    margin: 25px;
 }
