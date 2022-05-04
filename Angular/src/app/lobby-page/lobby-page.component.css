@@ -1,10 +1,8 @@
-<<<<<<< HEAD
 .square{
     height: 12em;
     width: 12em;
     background-color: rgb(214, 129, 31);
     margin: 20px;
-    
 }
 
 .drawingoutput .squarelabel{
@@ -14,29 +12,3 @@
 .squarelabel{
     margin: 20px 0px;
 }
-=======
-.maincontent{
-    border: 50px 50px;
-    justify-content: center;
-}
-
-.button {
-    background-color: rgb(214, 129, 31);
-    border: none;
-    color: white;
-    padding: 16px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: block;
-    margin: 10px auto;
-    border-radius: 4px;
-    transition-duration: 0.4s;
-    cursor: pointer;
-    
-  }
-
-  .button:hover {
-    background-color: rgb(128, 76, 17);
-    color: white;
-  }
->>>>>>> b9c61124ed72d558a9e3b8c2bba3063fa26b23f5
