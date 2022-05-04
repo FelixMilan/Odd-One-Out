@@ -13,13 +13,15 @@ import { MediaComponent } from './media/media.component';
 import { LobbyPageComponent } from './lobby-page/lobby-page.component';
 import { JoinPageComponent } from './join-page/join-page.component';
 import { GameComponent } from './game/game.component';
-import { CanvasModule } from '@ng-web-apis/canvas';
 import { VoteClientComponent } from './vote-client/vote-client.component';
 import { VoteHostComponent } from './vote-host/vote-host.component';
 import { DrawClientComponent } from './draw-client/draw-client.component';
 import { DrawHostComponent } from './draw-host/draw-host.component';
 import { LeaderboardHostComponent } from './leaderboard-host/leaderboard-host.component';
 import { LeaderboardClientComponent } from './leaderboard-client/leaderboard-client.component';
+import { WritingScreenClientComponent } from './writing-screen-client/writing-screen-client.component';
+import { WritingScreenHostComponent } from './writing-screen-host/writing-screen-host.component';
+import { VoteDrawerComponent } from './vote-drawer/vote-drawer.component';
 
 @NgModule({
   declarations: [
@@ -37,9 +39,11 @@ import { LeaderboardClientComponent } from './leaderboard-client/leaderboard-cli
     DrawHostComponent,
     LeaderboardHostComponent,
     LeaderboardClientComponent,
+    WritingScreenClientComponent,
+    WritingScreenHostComponent,
+    VoteDrawerComponent,
   ],
   imports: [
-    CanvasModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
