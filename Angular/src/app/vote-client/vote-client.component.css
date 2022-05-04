@@ -11,15 +11,11 @@
     text-align: center;
     text-decoration: none;
     display: block;
-    margin: 16px;
+    margin: 10px auto;
     border-radius: 4px;
     transition-duration: 0.4s;
     cursor: pointer;
     
-  }
-
-  .buttonsection{
-    justify-content: center;
   }
 
   .button:hover {
