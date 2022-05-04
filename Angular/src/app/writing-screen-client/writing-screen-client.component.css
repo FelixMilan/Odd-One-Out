@@ -11,6 +11,10 @@
     position: flex;
 }
 
+.inputsection{
+    margin: 20px 0px;
+}
+
 input[type=text] {
     padding: 12px 20px;
     margin: 5px 0 25px 0;
