@@ -5,17 +5,6 @@ body {
     text-align: center;
   }
 
-  .pagebtn .pagebutton{
-    font-size: 16px;  
-    border: none;
-    outline: none;
-    color: white;
-    padding: 14px 16px;
-    background-color: inherit;
-    font-family: inherit;
-    margin: 0;
-  }
-
   .logo-image{
       position: relative;
       padding: 10px;
@@ -32,6 +21,15 @@ body {
       color: #ffffff;
       background-color: rgb(214, 129, 31);
       z-index: 2;
+  }
+
+  .footermessage a:link, a:visited {
+    font-size: 20px;  
+    border: none;
+    outline: none;
+    color: white;
+    background-color: inherit;
+    margin: 0;
   }
 
   body {
