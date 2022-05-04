@@ -1,0 +1,14 @@
+.square{
+    height: 12em;
+    width: 12em;
+    background-color: rgb(214, 129, 31);
+    margin: 20px;
+}
+
+.drawingoutput .squarelabel{
+    display: inline-block;
+}
+
+.squarelabel{
+    margin: 20px 0px;
+}
