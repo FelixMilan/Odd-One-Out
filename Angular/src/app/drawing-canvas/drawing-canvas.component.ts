@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, OnInit } from '@angular/core';
 import { SignaturePad } from 'angular2-signaturepad';
 
 @Component({
@@ -11,7 +11,7 @@ export class DrawingCanvasComponent {
   @ViewChild(SignaturePad) signaturePad!: SignaturePad;
   public signaturePadOptions = {
     'minWidth' : 2,
-    penColor: 'rgb(0, 0, 0)',
+    penColor: 'rgba(0,0,0)',
     backgroundColor: 'rgb(255, 255, 255)',
     canvasWidth: 600,
     canvasHeight: 800,
@@ -22,9 +22,6 @@ export class DrawingCanvasComponent {
     this.signaturePad.clear();
   }
 
-  colorRed() {
-    this.signaturePadOptions.penColor = 'rgb(255,255,0)';
-  }
 
   drawComplete() {
     const base64 = this.signaturePad.toDataURL('image/png', 0.5);
