@@ -6,8 +6,10 @@ import { DrawHostComponent } from './draw-host/draw-host.component';
 import { GameComponent } from './game/game.component';
 import { HelpComponent } from './help/help.component';
 import { HomeComponent } from './home/home.component';
+import { JoinPageComponent } from './join-page/join-page.component';
 import { LeaderboardClientComponent } from './leaderboard-client/leaderboard-client.component';
 import { LeaderboardHostComponent } from './leaderboard-host/leaderboard-host.component';
+import { LobbyPageComponent } from './lobby-page/lobby-page.component';
 import { MediaComponent } from './media/media.component';
 import { VoteClientComponent } from './vote-client/vote-client.component';
 import { VoteDrawerComponent } from './vote-drawer/vote-drawer.component';
@@ -26,6 +28,14 @@ const ROUTES: Routes = [
     component: GameComponent,
     
     children: [
+      {
+        path: 'join-page',
+        component: JoinPageComponent,
+      },
+      {
+        path: 'lobby-page',
+        component: LobbyPageComponent,
+      },
       {
         path: 'writing-screen-host',
         component: WritingScreenHostComponent,
