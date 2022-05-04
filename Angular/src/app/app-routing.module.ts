@@ -11,9 +11,13 @@ const routes: Routes = [
   {path: 'help', component: HelpComponent},
   {path: 'home', component: HomeComponent},
   {path: 'media', component: MediaComponent},
+<<<<<<< HEAD
   {path: '', redirectTo: '/home', pathMatch: 'full'},
   {path: 'game', component: GameComponent},
   
+=======
+  {path: '', redirectTo: '/home', pathMatch: 'full'}
+>>>>>>> 339b0bff0db6dc21cdfed6dd20c7874e3296859e
 ];
 
 @NgModule({
