@@ -1,0 +1,28 @@
+.square{
+    height: 25em;
+    width: 25em;
+    background-color: rgb(214, 129, 31);
+    margin: 20px;
+    display:inline-block;
+}
+
+.scoresquare{
+    height: 15em;
+    width: 5em;
+    background-color: rgb(214, 129, 31);
+    margin: 50px 40px;
+    display:inline-block;
+}
+.drawingoutput .scoreoutput .label{
+    margin-bottom: 50px;
+    display:inline-block;
+}
+
+.squarelabel{
+    margin: 20px 0px;
+}
+
+hr.linebreak{
+    border: 1px solid rgb(214, 129, 31);
+    width: 75%;
+}
