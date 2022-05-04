@@ -1,4 +1,6 @@
+import { DrawingCanvasComponent } from './../drawing-canvas/drawing-canvas.component';
 import { Component, OnInit } from '@angular/core';
+
 
 @Component({
   selector: 'app-draw-client',
