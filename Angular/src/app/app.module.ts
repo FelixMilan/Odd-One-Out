@@ -13,7 +13,6 @@ import { MediaComponent } from './media/media.component';
 import { LobbyPageComponent } from './lobby-page/lobby-page.component';
 import { JoinPageComponent } from './join-page/join-page.component';
 import { GameComponent } from './game/game.component';
-import { CanvasModule } from '@ng-web-apis/canvas';
 import { VoteClientComponent } from './vote-client/vote-client.component';
 import { VoteHostComponent } from './vote-host/vote-host.component';
 import { DrawClientComponent } from './draw-client/draw-client.component';
@@ -39,7 +38,6 @@ import { LeaderboardClientComponent } from './leaderboard-client/leaderboard-cli
     LeaderboardClientComponent,
   ],
   imports: [
-    CanvasModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
