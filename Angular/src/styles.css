@@ -61,6 +61,7 @@ body {
   }
   
   .navbar a:hover, .dropdown:hover .dropbtn {
+    transition-duration: 0.4s;
     background-color: rgb(128, 76, 17);
   }
 
