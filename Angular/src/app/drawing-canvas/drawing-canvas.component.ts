@@ -14,7 +14,7 @@ export class DrawingCanvasComponent {
     penColor: 'rgba(0,0,0)',
     backgroundColor: 'rgb(255, 255, 255)',
     canvasWidth: 600,
-    canvasHeight: 800,
+    canvasHeight: 600,
 
   };
 
