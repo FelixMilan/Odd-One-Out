@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { LeaderBoard } from './leaderboard';
 import { Name } from './name';
 import { Player } from './player';
 import { Sketch } from './sketch';
@@ -24,10 +25,12 @@ export class InMemoryDataService {
 
     let sketches: Sketch[] = [];
 
-    return {players, namePool, sketches};
+    let leaderboards: LeaderBoard[] = [];
+
+    return {players, namePool, sketches, leaderboards};
   }
 
-  genId(sketches: Sketch[]): number {
-    return sketches.length > 0 ? Math.max(...sketches.map(sketch => sketch.id)) + 1 : 0;
+  genId(collections: any[]): number {
+    return collections.length > 0 ? Math.max(...collections.map(collection => collection.id)) + 1 : 0;
   }
 }
