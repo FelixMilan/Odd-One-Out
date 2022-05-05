@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { IOService } from '../IO.service';
+import { ServerService } from '../server.service';
 
 
 @Component({
@@ -8,8 +10,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GameComponent implements OnInit {
 
-  constructor() { }
+  constructor(private serverService: ServerService) { }
 
   ngOnInit(): void {
+    this.serverService.connect();
   }
 }

@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { io } from "socket.io-client";
-import { LobbyService } from './lobby.service';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +7,16 @@ import { LobbyService } from './lobby.service';
 export class ServerService {
 
   socket?: any;
-  lobbyCode?: string;
+  lobbyCode: string = '';
+  gameState: any;
+
+  getLobbyCode(): string {
+    return this.lobbyCode;
+  }
+
+  getGameState(): any {
+    return this.gameState;
+  }
 
   connect(): void {
     this.socket = io('http://localhost:3000/', {
@@ -55,17 +63,11 @@ export class ServerService {
           oddOneOut, // ID of drawing that is the odd one out image (ONLY VOTING STATUS)
         } = gameState;
         console.log(gameState);
-      })
 
-      // HOST: When a game is created
-      this.socket.on('newGame', (lobbyCode: string) => {
-        console.log(lobbyCode);
+        this.gameState = gameState;
       });
-
     });
   }
 
-
-
-  constructor(private lobbyService: LobbyService) { }
+  constructor() { }
 }

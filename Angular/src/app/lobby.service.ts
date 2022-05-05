@@ -6,8 +6,6 @@ import { ServerService } from './server.service';
 })
 export class LobbyService {
 
-  players: string[] = [];
-
   join(): void {
     this.serverService.socket.emit('join');
   }
@@ -18,6 +16,10 @@ export class LobbyService {
 
   start(): void {
     this.serverService.socket.emit('start');
+  }
+
+  getLobbyCode() {
+    this.serverService.getLobbyCode();
   }
 
   constructor(private serverService: ServerService) { }

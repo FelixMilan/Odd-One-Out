@@ -1,26 +1,31 @@
 import { Injectable } from '@angular/core';
-import { Socket } from 'dgram';
 import { ServerService } from './server.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class InputService {
+export class IOService {
 
   inputCeleb(celebName: string): void {
     this.serverService.socket.emit('inputCeleb', celebName);
   }
 
-  submitDrawing(drawing: string): void {
+  inputDrawing(drawing: string): void {
     this.serverService.socket.emit('draw', drawing);
   }
 
-  submitVote(drawingId: number): void {
+  inputVote(drawingId: number): void {
     this.serverService.socket.emit('voteDrawing', drawingId);
   }
 
-  submitArtist(drawingId: number): void {
+  inputArtist(drawingId: number): void {
     this.serverService.socket.emit('voteArtist', drawingId);
+  }
+
+  getGameState(): any {
+    this.serverService.socket.emit('gameState');
+
+    return this.serverService.getGameState();
   }
 
   constructor(private serverService: ServerService) { }
