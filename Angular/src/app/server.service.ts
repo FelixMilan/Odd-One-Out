@@ -26,6 +26,8 @@ export class ServerService {
     this.socket.emit('voteArtist', drawingId);
   }
 
+  get
+
   getLobbyCode(): string {
     return this.lobbyCode;
   }

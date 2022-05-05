@@ -11,10 +11,14 @@ export class LobbyPageComponent implements OnInit {
   lobbyCode?: string;
   players?: any;
 
+  hostRoom(): void {
+    this.serverService.getGameState();
+  }
+
   constructor(private serverService: ServerService) { }
 
   ngOnInit(): void {
-    this.lobbyCode = this.serverService.getLobbyCode();
+    this.lobbyCode = this.serverService.getLobbyCode;
   }
 
 }
