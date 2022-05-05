@@ -10,14 +10,16 @@ import { LobbyService } from '../lobby.service';
 export class LobbyPageComponent implements OnInit {
 
   players: any;
+  lobbyCode?: string;
 
   updatePlayers() {
-    
+    //this.players = this.lobbyService.
   }
 
   constructor(private lobbyService: LobbyService, private ioService: IOService) { }
 
   ngOnInit(): void {
+    this.lobbyCode = this.lobbyService.getLobbyCode();
   }
 
 }
