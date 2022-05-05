@@ -1,4 +1,6 @@
 
 .maincontent{
-    display: block;
+    border: 50px 50px;
+    justify-content: center;
+    display: inline;
 }
