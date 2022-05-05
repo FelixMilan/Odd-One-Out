@@ -2,6 +2,7 @@ import { Placeholder } from '@angular/compiler/src/i18n/i18n_ast';
 import { prepareSyntheticPropertyName } from '@angular/compiler/src/render3/util';
 import { Component, OnInit } from '@angular/core';
 import { LobbyService } from '../lobby.service';
+import { ServerService } from '../server.service';
 
 @Component({
   selector: 'app-home',
@@ -21,7 +22,7 @@ export class HomeComponent implements OnInit {
     this.lobbyService.join(nickname, lobbyCode);
   }
 
-  constructor(private lobbyService: LobbyService) { }
+  constructor(private lobbyService: LobbyService, private serverService: ServerService) { }
 
   ngOnInit(): void {
   }

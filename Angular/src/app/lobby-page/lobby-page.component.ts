@@ -18,7 +18,6 @@ export class LobbyPageComponent implements OnInit {
   constructor(private lobbyService: LobbyService, private ioService: IOService) { }
 
   ngOnInit(): void {
-    this.lobbyService.start();
   }
 
 }
