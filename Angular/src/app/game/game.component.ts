@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { GameService } from '../game.service';
 
 
 @Component({
@@ -9,7 +8,7 @@ import { GameService } from '../game.service';
 })
 export class GameComponent implements OnInit {
 
-  constructor(private gameService: GameService) { }
+  constructor() { }
 
   ngOnInit(): void {
   }
