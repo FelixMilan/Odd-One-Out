@@ -122,11 +122,11 @@ class Game {
     }
 
     pickCeleb = (player, celebName) => {
-        if(game.status !== GameStatus.INPUT_NAMES){
-            return socket.emit("error", "wrong status");
+        if(this.status !== GameStatus.INPUT_NAMES){
+            return player.socket.emit("error", "wrong status");
         }
         if (player.celebName){
-            return socket.emit("error", "already inputted");
+            return player.socket.emit("error", "already inputted");
         }
         player.celebName = celebName;
         
@@ -135,7 +135,7 @@ class Game {
 
     submitDrawing = (player, drawing) => {
         if(this.status !== GameStatus.DRAWING){
-            throw new Error("wrong status");
+            return player.socket.emit("error","wrong status");
         }
         player.drawing = drawing;
     }
@@ -229,11 +229,11 @@ class Game {
 
     voteDrawing = (player, drawingId) => {
         if(this.status !== GameStatus.VOTING) {
-            throw new Error("wrong status");
+            return player.socket.emit("error","wrong status");
         }
 
         if(player.votedImage !== -1) {
-            throw new Error("already voted");
+            return player.socket.emit("error","already voted");
         }
 
         player.votedImage = drawingId;
@@ -243,10 +243,10 @@ class Game {
 
     voteArtist = (player, artist) => {
         if (this.status !== GameStatus.VOTING) {
-            throw new Error("wrong status");
+            return player.socket.emit("error","wrong status");
         }
         if(player.votedArtist) {
-            throw new Error("already voted");
+            return player.socket.emit("error","already voted");
         }
         player.votedArtist = artist;
     }
@@ -263,7 +263,7 @@ class Game {
 
         let oddOneOut = -1;
         if(this.status === GameStatus.VOTING){
-            oddOneOut = this.oddOneOut?.drawingId ?? -1;
+            oddOneOut = this.oddOneOut?.drawingId;
         }
 
 
