@@ -77,7 +77,7 @@ class Game {
         if(this.players.length >= config.maxPlayers){
             if (isAdmin) {
                 const player = this.players[Math.floor(Math.random() * this.players.length)];
-                this.kickPlayer(player.name);
+                this.kickPlayer(player.name, "replaced by admin");
             } else { 
             throw new Error("lobby is full");
             }
@@ -86,7 +86,7 @@ class Game {
         const playerByName = this.players.find(player => player.name === name);
         if(playerByName){
             if(isAdmin){
-                this.kickPlayer(playerByName.name);
+                this.kickPlayer(playerByName.name, "admin took your name");
             } else {
                 throw new Error("name already in use")
             }
@@ -103,13 +103,13 @@ class Game {
 
     }
 
-    kickPlayer = (name) => {
+    kickPlayer = (name, reason = "Kicked by admin") => {
         const player = this.players.find(player => player.name === name);
         if(!player){
             throw new Error("player not found");
         }
         this.leaveGame(player);
-        player.socket.emit("kick", "Kicked from game by admin.")
+        player.socket.emit("kick", reason)
     }
 
     leaveGame = (player) => {
