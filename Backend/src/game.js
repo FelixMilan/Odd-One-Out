@@ -262,7 +262,7 @@ class Game {
     broadcastGameState = () => {
 
         let oddOneOut = -1;
-        if(this.status === GameStatus.VOTING){
+        if(this.status === GameStatus.VOTING || this.status === GameStatus.END){
             oddOneOut = this.oddOneOut?.drawingId;
         }
 
