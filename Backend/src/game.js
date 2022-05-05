@@ -122,11 +122,11 @@ class Game {
     }
 
     pickCeleb = (player, celebName) => {
-        if(game.status !== GameStatus.INPUT_NAMES){
-            return socket.emit("error", "wrong status");
+        if(this.status !== GameStatus.INPUT_NAMES){
+            return player.socket.emit("error", "wrong status");
         }
         if (player.celebName){
-            return socket.emit("error", "already inputted");
+            return player.socket.emit("error", "already inputted");
         }
         player.celebName = celebName;
         
