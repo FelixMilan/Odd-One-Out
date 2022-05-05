@@ -55,3 +55,10 @@ p{
 .abouttext{
     margin: 25px;
 }
+
+@media only screen and (max-width:500px) {
+    /* For mobile phones: */
+    .headshot {
+      width: 100%;
+    }
+  }
