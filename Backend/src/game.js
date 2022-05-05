@@ -113,7 +113,7 @@ class Game {
     }
 
     leaveGame = (player) => {
-        const index = this.players.indexOf(playuer);
+        const index = this.players.indexOf(player);
         if (index == -1) return;
 
         this.players.splice(index, 1);
