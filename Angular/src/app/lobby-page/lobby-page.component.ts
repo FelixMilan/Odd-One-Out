@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IOService } from '../io.service';
-import { LobbyService } from '../lobby.service';
+import { ServerService } from '../server.service';
 
 @Component({
   selector: 'app-lobby-page',
@@ -9,16 +8,13 @@ import { LobbyService } from '../lobby.service';
 })
 export class LobbyPageComponent implements OnInit {
 
-  players: any;
   lobbyCode?: string;
+  players?: any;
 
-  updatePlayers() {
-  }
-
-  constructor(private lobbyService: LobbyService, private ioService: IOService) { }
+  constructor(private serverService: ServerService) { }
 
   ngOnInit(): void {
-    this.lobbyCode = this.lobbyService.getLobbyCode();
+    this.lobbyCode = this.serverService.getLobbyCode();
   }
 
 }
