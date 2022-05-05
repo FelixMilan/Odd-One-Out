@@ -1,6 +1,6 @@
-import { Player } from './../player';
-
 import { Component, OnInit } from '@angular/core';
+
+
 @Component({
   selector: 'app-vote-host',
   templateUrl: './vote-host.component.html',

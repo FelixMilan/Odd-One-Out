@@ -12,25 +12,5 @@ export class GameComponent implements OnInit {
   constructor(private gameService: GameService) { }
 
   ngOnInit(): void {
-    this.getPlayers;
-    this.getNamePool;
-    this.setOddOneOut;
-    this.chooseNamesFromPool;
-  }
-
-  getPlayers(): void {
-    this.gameService.getPlayers;
-  }
-  
-  getNamePool(): void {
-    this.gameService.getNamePool();
-  }
-
-  setOddOneOut(): void {
-    this.gameService.setOddOneOut;
-  }
-
-  chooseNamesFromPool(): void {
-    this.gameService.chooseNamesFromPool;
   }
 }
