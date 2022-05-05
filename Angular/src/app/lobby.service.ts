@@ -10,7 +10,8 @@ export class LobbyService {
     this.serverService.socket.emit('join', nickname, lobbyCode);
   }
 
-  create(): void {
+  create(socket: any): void {
+    this.serverService.connect(socket);
     this.serverService.socket.emit('create');
   }
 

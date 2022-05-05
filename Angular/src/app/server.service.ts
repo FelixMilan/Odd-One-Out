@@ -6,9 +6,9 @@ import { io } from "socket.io-client";
 })
 export class ServerService {
 
-  socket?: any;
   lobbyCode: string = '';
   gameState: any;
+  socket?: any;
 
   getLobbyCode(): string {
     return this.lobbyCode;
@@ -18,10 +18,8 @@ export class ServerService {
     return this.gameState;
   }
 
-  connect(): void {
-    this.socket = io('http://localhost:3000/', {
-      transports: ['websocket']
-    });
+  connect(socket: any): void {
+    this.socket = socket;
 
     this.socket.on('connect', () => {
       console.log('Connected to the server');

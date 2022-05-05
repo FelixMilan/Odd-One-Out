@@ -13,6 +13,5 @@ export class GameComponent implements OnInit {
   constructor(private serverService: ServerService, private ioService: IOService) { }
 
   ngOnInit(): void {
-    this.serverService.connect();
   }
 }

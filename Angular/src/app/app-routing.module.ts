@@ -23,8 +23,6 @@ const ROUTES: Routes = [
   {path: 'help', component: HelpComponent},
   {path: 'home', component: HomeComponent},
   {path: 'media', component: MediaComponent},
-  { path: '**', component: PageNotFoundComponent },
-  {path: '', redirectTo: '/home', pathMatch: 'full'},
   {
     path: 'game', 
     component: GameComponent,
@@ -76,6 +74,7 @@ const ROUTES: Routes = [
       },
     ]
   },
+  { path: '**', component: PageNotFoundComponent },
 ];
 
 @NgModule({
