@@ -6,9 +6,25 @@ import { io } from "socket.io-client";
 })
 export class ServerService {
 
+  socket: any;
   lobbyCode: string = '';
   gameState: any;
-  socket?: any;
+
+  inputCeleb(celebName: string): void {
+    this.socket.emit('inputCeleb', celebName);
+  }
+
+  inputDrawing(drawing: string): void {
+    this.socket.emit('draw', drawing);
+  }
+
+  inputVote(drawingId: number): void {
+    this.socket.emit('voteDrawing', drawingId);
+  }
+
+  inputArtist(drawingId: number): void {
+    this.socket.emit('voteArtist', drawingId);
+  }
 
   getLobbyCode(): string {
     return this.lobbyCode;
@@ -18,13 +34,11 @@ export class ServerService {
     return this.gameState;
   }
 
-  init() {
+  connect(): void {
     this.socket = io('http://localhost:3000/', {
     transports: ['websocket']
     });
-  }
 
-  connect(): void {
     this.socket.on('connect', () => {
       console.log('Connected to the server');
 
