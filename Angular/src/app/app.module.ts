@@ -21,6 +21,7 @@ import { WritingScreenHostComponent } from './writing-screen-host/writing-screen
 import { VoteDrawerComponent } from './vote-drawer/vote-drawer.component';
 import { DrawingCanvasComponent } from './drawing-canvas/drawing-canvas.component';
 import { SignaturePadModule } from 'angular2-signaturepad';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { SignaturePadModule } from 'angular2-signaturepad';
     WritingScreenHostComponent,
     VoteDrawerComponent,
     DrawingCanvasComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,

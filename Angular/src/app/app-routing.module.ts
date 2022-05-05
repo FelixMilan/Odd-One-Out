@@ -11,6 +11,7 @@ import { LeaderboardClientComponent } from './leaderboard-client/leaderboard-cli
 import { LeaderboardHostComponent } from './leaderboard-host/leaderboard-host.component';
 import { LobbyPageComponent } from './lobby-page/lobby-page.component';
 import { MediaComponent } from './media/media.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { VoteClientComponent } from './vote-client/vote-client.component';
 import { VoteDrawerComponent } from './vote-drawer/vote-drawer.component';
 import { VoteHostComponent } from './vote-host/vote-host.component';
@@ -22,6 +23,7 @@ const ROUTES: Routes = [
   {path: 'help', component: HelpComponent},
   {path: 'home', component: HomeComponent},
   {path: 'media', component: MediaComponent},
+  { path: '**', component: PageNotFoundComponent },
   {path: '', redirectTo: '/home', pathMatch: 'full'},
   {
     path: 'game', 

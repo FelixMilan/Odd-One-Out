@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { IOService } from '../io.service';
+import { LobbyService } from '../lobby.service';
 
 @Component({
   selector: 'app-lobby-page',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LobbyPageComponent implements OnInit {
 
-  constructor() { }
+  players: any;
+
+  constructor(private lobbyService: LobbyService, private ioService: IOService) { }
 
   ngOnInit(): void {
+    this.lobbyService.start();
   }
 
 }
