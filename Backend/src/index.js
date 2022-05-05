@@ -43,7 +43,7 @@ io.on('connection', (socket) => {
       }
 
       const game = getGameByLobbyCode(lobby);
-      if(!game){
+      if(!game) {
           return socket.emit("error", "lobby does not exist");
       }
 

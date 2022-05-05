@@ -3,15 +3,10 @@
       <img src="assets/OOOLOGO.svg" alt="logo" width="10%">
     </div>
     <!-- The Host Form Section -->
-    <form class="buttonsection" action="/action_page.php">
-    <h2>WELCOME TO THE LOBBY!</h2>
-      <button class="button" disabled>PLAYER</button> <!--NAME INPUT!!!-->
-      <button class="button" disabled>PLAYER</button> <!--NAME INPUT!!!-->
-      <button class="button" disabled>PLAYER</button> <!--NAME INPUT!!!-->
-      <button class="button" disabled>PLAYER</button> <!--NAME INPUT!!!-->
-      <button class="button" disabled>PLAYER</button> <!--NAME INPUT!!!-->
-      <button class="button" disabled>PLAYER</button> <!--NAME INPUT!!!-->
-      <button class="button" disabled>PLAYER</button> <!--NAME INPUT!!!-->
-      <button class="button" disabled>PLAYER</button> <!--NAME INPUT!!!-->
-    </form>
+    <div class="buttonsection">
+      <h2>WELCOME TO THE LOBBY!</h2>
+      <div id="flex-container">
+        <span *ngfor="let player of players">{{player}}</span>
+      </div>
+    </div>
 </div>
