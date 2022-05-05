@@ -1,13 +1,19 @@
 const games = [];
-module.exports.addGame = (game) => {
+const addGame = (game) => {
     games.push(game);
 }
 
-module.exports.removeGame = (game) => {
+const removeGame = (game) => {
     const index = games.indexOf(game);;
     games.splice(index, 1);
 }
 
-module.exports.getGameByLobbyCode = (lobbyCode) => {
+const getGameByLobbyCode = (lobbyCode) => {
     return games.find(game => game.lobbyCode == lobbyCode);
+}
+
+module.exports = {
+    addGame,
+    removeGame,
+    getGameByLobbyCode
 }

@@ -1,6 +1,6 @@
 const config = require("./config");
 
-module.exports.Player = class Player {
+class Player {
     name;
     socket;
     celebName;
@@ -36,8 +36,7 @@ const convertPlayerToDrawing = (player, game) => {
         playerName: game.status === GameStatus.END ? player.name : undefined,
     }
 }
-
-module.exports.GameStatus = {
+const GameStatus = {
     LOBBY: "lobby",
     INPUT_NAMES: "input_names",
     DRAWING: "drawing",
@@ -45,7 +44,7 @@ module.exports.GameStatus = {
     END: "end"
 }
 
-module.exports.Game = class Game {
+class Game {
     lastDrawingId = 0;
     
     players = [];
@@ -288,4 +287,10 @@ module.exports.Game = class Game {
         }
         this.adminClient.emit("gameState", gameState);
     }
+}
+
+module.exports = {
+    Player,
+    GameStatus,
+    Game
 }
