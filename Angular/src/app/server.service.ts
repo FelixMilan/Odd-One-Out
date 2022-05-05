@@ -18,9 +18,13 @@ export class ServerService {
     return this.gameState;
   }
 
-  connect(socket: any): void {
-    this.socket = socket;
+  init() {
+    this.socket = io('http://localhost:3000/', {
+    transports: ['websocket']
+    });
+  }
 
+  connect(): void {
     this.socket.on('connect', () => {
       console.log('Connected to the server');
 

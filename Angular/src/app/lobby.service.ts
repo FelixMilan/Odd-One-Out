@@ -6,16 +6,12 @@ import { ServerService } from './server.service';
 })
 export class LobbyService {
 
-  socket: any;
-
   join(nickname: string, lobbyCode: string): void {
     this.serverService.socket.emit('join', nickname, lobbyCode);
   }
 
-  create(socket: any): void {
-    this.socket = socket;
-
-    this.serverService.connect(this.socket);
+  create(): void {
+    this.serverService.connect();
     this.serverService.socket.emit('create');
   }
 

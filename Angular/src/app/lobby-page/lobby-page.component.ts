@@ -13,7 +13,6 @@ export class LobbyPageComponent implements OnInit {
   lobbyCode?: string;
 
   updatePlayers() {
-    //this.players = this.lobbyService.
   }
 
   constructor(private lobbyService: LobbyService, private ioService: IOService) { }

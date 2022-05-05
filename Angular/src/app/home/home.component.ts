@@ -14,10 +14,9 @@ export class HomeComponent implements OnInit {
 
   nickname: string = '';
   lobbyCode: string = '';
-  socket: any;
 
   hostRoom(): void {
-    this.lobbyService.create(this.socket);
+    this.lobbyService.create();
   }
 
   addPlayer(nickname: string, lobbyCode: string): void {
@@ -27,9 +26,6 @@ export class HomeComponent implements OnInit {
   constructor(private lobbyService: LobbyService, private serverService: ServerService) { }
 
   ngOnInit(): void {
-    this.socket = io('http://localhost:3000/', {
-    transports: ['websocket']
-  });
   }
 
 }
