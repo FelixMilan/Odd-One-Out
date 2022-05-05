@@ -252,6 +252,9 @@ class Game {
     }
 
     startGame = () => {
+        if(this.status != GameStatus.LOBBY){
+            return;
+        }
         this.status = GameStatus.INPUT_NAMES;
         this.broadcastGameState();
     }

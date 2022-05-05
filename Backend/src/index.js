@@ -24,7 +24,16 @@ io.on('connection', (socket) => {
 
       socket.emit("newGame", game.lobbyCode);
 
+
   })
+
+  socket.on("start", (lobbyCode) => {
+    const game = getGameByLobbyCode(lobbyCode)
+    if(game.adminClient.id == socket.id){
+        game.startGame();
+    }
+})
+
   socket.on("join", (name, lobby) => {
       if(!name?.trim()){
           return socket.emit("error", "invalid name")
