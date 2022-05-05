@@ -37,8 +37,8 @@
 }
 
 .headshot {
-    width: 300px;
-    height: 300px;
+    width: 400px;
+    height: 400px;
     margin: 30px 30px 30px 0;
     float: left;
     object-fit: cover;
