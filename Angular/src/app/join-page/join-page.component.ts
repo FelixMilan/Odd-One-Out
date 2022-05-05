@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LobbyService } from '../lobby.service';
 
 @Component({
   selector: 'app-join-page',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class JoinPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(private lobbyService: LobbyService) { }
 
   ngOnInit(): void {
   }

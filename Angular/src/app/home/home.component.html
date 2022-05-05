@@ -3,21 +3,20 @@
       <img src="assets/OOOLOGO.svg" alt="logo" width="20%">
     </div>
     <!-- The Host Form Section -->
-    <form class="formsection" action="/action_page.php">
+    <form class="formsection">
     <h2>HOST GAME</h2>
-      <input type="button" class="button" value="HOST ROOM">
+      <input type="button" class="button" value="HOST ROOM" (click)="hostRoom()" routerLink="/game/lobby-page">
     </form>
 
     <hr class="linebreak">
 
     <!-- The Player Form Section -->
-    <form class="formsection" action="/action_page.php">
+    <form class="formsection">
         <h2>JOIN GAME</h2>
         <label class="label" for="name">NAME:</label><br>
-        <input type="text" id="name" name="name" placeholder="ENTER NAME"><br>
+        <input type="text" id="nickname" name="{{nickname}}" placeholder="ENTER NAME"><br>
         <label class="label" for="roomid">UNIQUE ROOM ID:</label><br>
-        <input type="text" id="roomid" name="roomid" placeholder="ENTER ROOM ID"><br><br>
-        <input type="button" class="button" value="JOIN ROOM">
-        <!--<button type="button" (click)="storePlayers()" class="btn btn-sm btn-outline-secondary">View</button>-->
+        <input type="text" id="lobbyCode" name="{{lobbyCode}}" placeholder="ENTER ROOM ID"><br><br>
+        <input type="button" class="button" value="JOIN ROOM" (click)="addPlayer(nickname, lobbyCode)" routerLink="/game/join-page">
       </form> 
 </div>

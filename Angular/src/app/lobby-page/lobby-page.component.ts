@@ -11,6 +11,10 @@ export class LobbyPageComponent implements OnInit {
 
   players: any;
 
+  updatePlayers() {
+    
+  }
+
   constructor(private lobbyService: LobbyService, private ioService: IOService) { }
 
   ngOnInit(): void {
