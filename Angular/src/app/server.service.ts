@@ -37,7 +37,7 @@ export class ServerService {
   }
 
   connect(): void {
-    this.socket = io('http://localhost:3000/', {
+    this.socket = io('https://game.retailparody.com', {
     transports: ['websocket']
     });
 
