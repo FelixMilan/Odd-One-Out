@@ -26,8 +26,6 @@ export class ServerService {
     this.socket.emit('voteArtist', drawingId);
   }
 
-  get
-
   getLobbyCode(): string {
     return this.lobbyCode;
   }
@@ -37,8 +35,9 @@ export class ServerService {
   }
 
   connect(): void {
+    if (this.socket) return;
     this.socket = io('https://game.retailparody.com/', {
-    transports: ['websocket']
+      transports: ['websocket']
     });
 
     this.socket.on('connect', () => {

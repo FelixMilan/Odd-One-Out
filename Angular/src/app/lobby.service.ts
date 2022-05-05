@@ -20,7 +20,7 @@ export class LobbyService {
   }
 
   getLobbyCode(): string {
-    return this.serverService.getLobbyCode;
+    return this.serverService.getLobbyCode();
   }
 
   constructor(private serverService: ServerService) { }
