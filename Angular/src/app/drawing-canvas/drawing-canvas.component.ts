@@ -13,8 +13,8 @@ export class DrawingCanvasComponent {
     'minWidth' : 2,
     penColor: 'rgba(0,0,0)',
     backgroundColor: 'rgb(255, 255, 255)',
-    canvasWidth: 300,
-    canvasHeight: 300,
+    canvasWidth: 350,
+    canvasHeight: 350,
 
   };
 
