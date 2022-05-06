@@ -13,8 +13,22 @@ export class LobbyPageComponent implements OnInit {
 
   constructor(private serverService: ServerService) { }
 
+  checkInterval: any=null;
+
   ngOnInit(): void {
     this.lobbyCode = this.serverService.getLobbyCode();
+
+    this.checkInterval = setInterval(() => {
+       this.players = this.serverService.getGameState().players.map((player: any) => {
+         return player?.name;
+       });
+    }, 500);
+  }
+
+  ngOnDestroy(): void {
+    if (this.checkInterval) {
+      clearInterval(this.checkInterval);
+    }
   }
 
 }
