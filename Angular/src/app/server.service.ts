@@ -73,13 +73,17 @@ export class ServerService {
       this.socket.on('joined',
         (name: string, lobbyCode: string) => {
           console.log(`Player, ${name} joined the server ${lobbyCode}`);
+          this.lobbyCode = lobbyCode;
+
+          this.router.navigate(["/game/join-page"])
         });
 
       this.socket.on('kick', (reason: string) => {
-        console.log(reason);
+        alert("You were kicked: " + reason);
       });
 
       this.socket.on('error', (error: string) => {
+        alert(error);
         console.log(error);
         // Possible errors:
         // - wrong status (when you pick a celeb but its not in INPUT_NAMES status)
