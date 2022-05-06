@@ -8,6 +8,11 @@ import { ServerService } from '../server.service';
 })
 export class WritingScreenClientComponent implements OnInit {
 
+  constructor(private serverService: ServerService) { }
+
+  checkInterval: any=null;
+  lobbyCode?: string;
+  timeLeft?: number;
   celebName: string='';
 
   setCelebName(e:any): void {
@@ -18,9 +23,17 @@ export class WritingScreenClientComponent implements OnInit {
     this.serverService.inputCeleb(this.celebName);
   }
 
-  constructor(private serverService: ServerService) { }
-
   ngOnInit(): void {
+    this.lobbyCode = this.serverService.getLobbyCode();
+
+    this.checkInterval = setInterval(() => {
+      this.timeLeft = this.serverService.getGameState().timeLeft;
+    }, 500);
   }
 
+  ngOnDestroy(): void {
+    if (this.checkInterval) {
+      clearInterval(this.checkInterval);
+    }
+  }
 }
