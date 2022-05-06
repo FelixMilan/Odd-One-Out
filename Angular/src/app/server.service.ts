@@ -106,7 +106,7 @@ export class ServerService {
           lobbyCode, // AEB5
           status, // lobby, input_names, drawing, voting, end
           timeLeft, // in seconds (for VOTING status and DRAWING status)
-          players, // array of player objects ({ name="NAME OF YOU", drawn=true/false, votedArtist="NAME OF OTHER PERSON" })
+          players, // array of player objects ({ name="NAME OF YOU", drawn=true/false, votedArtist="NAME OF OTHER PERSON", votedDrawing=5 })
           drawings, // array of drawings ({ id=1, drawing=BASE64..., celebName="" (ONLY END STATUS), playerName="" (ONLY END STATUS) })
           defaultCeleb, // the expected drawing (not odd one out)
           oddOneOut, // ID of drawing that is the odd one out image (ONLY VOTING STATUS)

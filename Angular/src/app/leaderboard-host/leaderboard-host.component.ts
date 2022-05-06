@@ -12,8 +12,8 @@ export class LeaderboardHostComponent implements OnInit {
   oddOneOutCeleb: string='';
   oddOneOutDrawing: string='';
 
-  playerCorrect=[]
-  playerIncorrect=[];
+  playerCorrect: any[]=[]
+  playerIncorrect: any[]=[];
 
   constructor(private serverService: ServerService) { }
 
@@ -25,6 +25,16 @@ export class LeaderboardHostComponent implements OnInit {
     this.oddOneOutPlayer = drawing?.playerName ?? "UNKNOWN";
     this.oddOneOutCeleb = drawing?.celebName ?? "UNKNOWN";
     this.oddOneOutDrawing = drawing?.drawing ?? "";
+
+    const players = this.serverService.getGameState().players;
+
+    this.playerCorrect = players.filter((player: any) => {
+      return oddOneOutDrawingId == player.votedDrawing;
+    })
+
+    this.playerIncorrect = players.filter((player: any) => {
+      return oddOneOutDrawingId != player.votedDrawing;
+    })
   }
 
 }
