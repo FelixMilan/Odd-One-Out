@@ -9,23 +9,25 @@
     </div>
 
     <!-- The Drawing Output Section -->
-    <div class="drawingoutput">
-        <div class="squarelabel">
-            <div class="square" id="square" name="square"></div> 
+    <div class="outputs">
+        <div class="drawingoutput">
+            <div class="squarelabel">
+                <div class="square" id="square" name="square">
+                    <img [src]="oddOneOutDrawing" alt="" />
+                </div> 
+            </div>
+        </div> 
+    
+        <div class="rightorwrong">
+            <h2>PLAYERS WHO VOTED CORRECTLY:</h2>
+            <div id="flex-container">
+                <span class="lobbyinput" *ngFor="let player of playerCorrect">{{player}}</span>
+            </div>
+            <h2>PLAYERS WHO VOTED INCORRECTLY:</h2>
+            <div id="flex-container">
+                <span class="lobbyinput" *ngFor="let player of playerIncorrect">{{player}}</span>
+            </div>
         </div>
-    </div> 
-
-    <div class="rightorwrong">
-        <h2>PLAYERS WHO VOTED CORRECTLY:</h2>
-        <div id="flex-container">
-            <span class="lobbyinput" *ngFor="let player of playerCorrect">{{player}}</span>
-          </div>
     </div>
-
-    <div class="rightorwrong">
-        <h2>PLAYERS WHO VOTED INCORRECTLY:</h2>
-        <div id="flex-container">
-            <span class="lobbyinput" *ngFor="let player of playerIncorrect">{{player}}</span>
-          </div>
-    </div>
+    
 </div>
