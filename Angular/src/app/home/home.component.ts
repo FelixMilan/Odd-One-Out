@@ -14,6 +14,14 @@ export class HomeComponent implements OnInit {
   nickname: string = '';
   lobbyCode: string = '';
 
+  setNickname(e: any): void {
+    this.nickname = (e.target?.value ?? '').toUpperCase();
+  }
+
+  setLobbyCode(e: any): void {
+    this.lobbyCode = (e.target?.value ?? '').toUpperCase();
+  }
+
   hostRoom(): void {
     this.serverService.create();
   }
