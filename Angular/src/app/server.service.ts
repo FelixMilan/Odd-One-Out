@@ -111,15 +111,23 @@ export class ServerService {
         } = gameState;
         console.log(gameState);
 
-        if (this.gameState.status === "lobby") {
-          if (gameState.status === "input_names") {
+        const previousStatus = this.gameState?.status;
+        const newStatus = gameState?.status;
+
+        if (previousStatus === "lobby") {
+          if (newStatus === "input_names") {
             if (this.isPlayer) {
               this.router.navigate(["/game/writing-screen-client"]);
             } else {
               this.router.navigate(["/game/writing-screen-host"]);
             }
           }
+        } else if (previousStatus === "input_names") {
+          if (newStatus === "drawing") {
+            
+          }
         }
+
 
         this.gameState = gameState;
       });
