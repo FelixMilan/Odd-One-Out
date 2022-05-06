@@ -29,6 +29,7 @@ export class ServerService {
   }
 
   join(nickname: string, lobbyCode: string): void {
+    this.connect();
     this.socket.emit('join', nickname, lobbyCode);
   }
 
