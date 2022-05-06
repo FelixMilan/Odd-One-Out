@@ -24,16 +24,33 @@ export class DrawingCanvasComponent {
     this.signaturePad.clear();
   }
 
-  getCeleb(){
-    return this.serverService.getCelebName();
+  celebName: string = 'UNKNOWN';
+  timeLeft?: number;
+
+  checkInterval: any=null;
+
+  ngOnInit(): void {
+    this.checkInterval = setInterval(() => {
+      const celeb = this.serverService.getCelebName();
+      if (celeb) {
+        this.celebName = celeb;
+      }
+      this.timeLeft = this.serverService.getGameState().timeLeft;
+
+    }, 500);
+  }
+
+  ngOnDestroy(): void {
+    if (this.checkInterval) {
+      clearInterval(this.checkInterval);
+    }
   }
 
 
   drawComplete() {
     const base64 = this.signaturePad.toDataURL('image/png', 0.5);
-    const blob = this.base64toBlob(base64);
-    console.log(base64);
-    console.log(blob);
+    // const blob = this.base64toBlob(base64);
+    this.serverService.inputDrawing(base64);
   }
 
   base64toBlob(base64: string) {

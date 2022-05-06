@@ -150,10 +150,6 @@ export class ServerService {
         }
 
 
-
-        
-
-
         this.gameState = gameState;
       });
     });
