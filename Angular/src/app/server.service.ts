@@ -12,6 +12,8 @@ export class ServerService {
   gameState: any;
   celebName?: string;
 
+  isPlayer: boolean=true;
+
   inputCeleb(celebName: string): void {
     this.socket.emit('inputCeleb', celebName);
   }
@@ -38,8 +40,8 @@ export class ServerService {
     this.socket.emit('create');
   }
 
-  start(): void {
-    this.socket.emit('start');
+  start(lobbyCode: string): void {
+    this.socket.emit('start', lobbyCode);
   }
 
   getLobbyCode(): string {
@@ -66,6 +68,7 @@ export class ServerService {
       this.socket.on('newGame', (lobbyCode: string) => {
         console.log(`New game created. Lobby code: ${lobbyCode}`);
 
+        this.isPlayer = false;
         this.lobbyCode = lobbyCode;
 
         this.router.navigate(["/game/lobby-page"])
@@ -75,7 +78,7 @@ export class ServerService {
         (name: string, lobbyCode: string) => {
           console.log(`Player, ${name} joined the server ${lobbyCode}`);
           this.lobbyCode = lobbyCode;
-
+          this.isPlayer = true;
           this.router.navigate(["/game/join-page"])
         });
 
@@ -107,6 +110,16 @@ export class ServerService {
           oddOneOut, // ID of drawing that is the odd one out image (ONLY VOTING STATUS)
         } = gameState;
         console.log(gameState);
+
+        if (this.gameState.status === "lobby") {
+          if (gameState.status === "input_names") {
+            if (this.isPlayer) {
+              this.router.navigate(["/game/writing-screen-client"]);
+            } else {
+              this.router.navigate(["/game/writing-screen-host"]);
+            }
+          }
+        }
 
         this.gameState = gameState;
       });
