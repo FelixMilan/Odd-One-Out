@@ -6,7 +6,7 @@
     <form class="inputsection" action="/action_page.php">
         <!-- ADD TIMER !!!!!!!! -->
         <label class="label" for="name">WRITE NAMES:</label><br>
-        <input type="text" id="name" name="name" placeholder="WRITE NAMES HERE!"><br>
+        <input type="text" id="name" [value]="celebName" (input)="setCelebName($event)" placeholder="WRITE NAMES HERE!"><br>
         <input type="button" class="button" value="SUBMIT NAME">
       </form> 
 </div>

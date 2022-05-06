@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ServerService } from '../server.service';
 
 @Component({
   selector: 'app-writing-screen-client',
@@ -7,7 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WritingScreenClientComponent implements OnInit {
 
-  constructor() { }
+  celebName: string='';
+
+  setCelebName(e:any): void {
+    this.celebName = (e.target?.value ?? '').toUpperCase()
+  }
+
+  inputCeleb(): void{
+    this.serverService.inputCeleb(this.celebName);
+  }
+
+  constructor(private serverService: ServerService) { }
 
   ngOnInit(): void {
   }

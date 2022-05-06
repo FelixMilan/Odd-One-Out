@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { io } from "socket.io-client";
 import { Router } from "@angular/router"
+import { ifError } from 'assert';
 
 @Injectable({
   providedIn: 'root'
@@ -124,9 +125,33 @@ export class ServerService {
           }
         } else if (previousStatus === "input_names") {
           if (newStatus === "drawing") {
-            
+            if(this.isPlayer){
+              this.router.navigate(["/game/draw-client"]);
+            } else{
+              this.router.navigate(["/game/draw-host"]);
+            }
+          }
+        } else if (previousStatus === "drawing") {
+          if (newStatus === "voting") {
+            if(this.isPlayer){
+              this.router.navigate(["/game/vote-client"]);
+            } else{
+              this.router.navigate(["/game/vote-host"]);
+            }
+          }
+        } else if (previousStatus === "voting") {
+          if (newStatus === "end") {
+            if(this.isPlayer){
+              this.router.navigate(["/game/leaderboard-client"]);
+            } else{
+              this.router.navigate(["/game/leaderboard-host"]);
+            }
           }
         }
+
+
+
+        
 
 
         this.gameState = gameState;
