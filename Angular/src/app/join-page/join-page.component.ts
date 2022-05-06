@@ -19,7 +19,7 @@ export class JoinPageComponent implements OnInit {
        this.players = this.serverService.getGameState().players.map((player: any) => {
          return player?.name;
        });
-     , 150);
+    }, 500);
   }
 
   ngOnDestroy(): void {
