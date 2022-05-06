@@ -21,6 +21,8 @@ const convertPlayerToInfoPlayer = (player, game) => {
         name: player.name,
         drawn: player.drawing ? true : false,
         votedArtist: game.status === GameStatus.END ? player.votedArtist : undefined,
+        votedDrawing: game.status === GameStatus.END ? player.votedImage : undefined,
+        
     }
 }
 
@@ -32,10 +34,11 @@ const convertPlayerToDrawing = (player, game) => {
     return {
         id: player.drawingId,
         drawing: player.drawing,
+        playerName: player.name,
         celebName: game.status === GameStatus.END ? player.celebName : undefined,
-        playerName: game.status === GameStatus.END ? player.name : undefined,
     }
 }
+
 const GameStatus = {
     LOBBY: "lobby",
     INPUT_NAMES: "input_names",
@@ -282,6 +285,7 @@ class Game {
             drawings: this.players.map(player => {
                 return convertPlayerToDrawing(player, this)
             }),
+            defaultCeleb: this.defaultCeleb,
             oddOneOut: oddOneOut, 
         };
 
