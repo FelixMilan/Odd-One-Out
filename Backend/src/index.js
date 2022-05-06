@@ -24,7 +24,11 @@ io.on('connection', (socket) => {
 
       socket.emit("newGame", game.lobbyCode);
 
-
+      socket.on("disconnect", () => {
+          if (game?.players?.length == 0) {
+            removeGame(getGameByLobbyCode(game.lobbyCode));
+          }
+      })
   })
 
   socket.on("start", (lobbyCode) => {
