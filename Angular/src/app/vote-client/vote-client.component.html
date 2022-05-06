@@ -5,7 +5,7 @@
     <!-- The Host Form Section -->
     <form class="buttonsection" action="/action_page.php">
     <h2>WHICH ITEM DO YOU THINK IS THE ODD ONE OUT?</h2>
-      
+    
       <input *ngFor="let drawing of drawings" type="button" class="button" value="{{drawing.playerName}}" [disabled]='votedFor > -1 && drawing.id != votedFor' (click)="itemVote(drawing.id)">
 
     </form>
