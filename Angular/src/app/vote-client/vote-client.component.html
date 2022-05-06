@@ -5,13 +5,8 @@
     <!-- The Host Form Section -->
     <form class="buttonsection" action="/action_page.php">
     <h2>WHICH ITEM DO YOU THINK IS THE ODD ONE OUT?</h2>
-      <input type="button" class="button" value="ITEM 1"> <!--NAME INPUT!!!-->
-      <input type="button" class="button" value="ITEM 2"> <!--NAME INPUT!!!-->
-      <input type="button" class="button" value="ITEM 3"> <!--NAME INPUT!!!-->
-      <input type="button" class="button" value="ITEM 4"> <!--NAME INPUT!!!-->
-      <input type="button" class="button" value="ITEM 5"> <!--NAME INPUT!!!-->
-      <input type="button" class="button" value="ITEM 6"> <!--NAME INPUT!!!-->
-      <input type="button" class="button" value="ITEM 7"> <!--NAME INPUT!!!-->
-      <input type="button" class="button" value="ITEM 8"> <!--NAME INPUT!!!-->
+      
+      <input *ngFor="let drawing of drawings" type="button" class="button" value="{{drawing.playerName}}" [disabled]='votedFor > -1 && drawing.id != votedFor' (click)="itemVote(drawing.id)">
+
     </form>
 </div>

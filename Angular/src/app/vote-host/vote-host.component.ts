@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ServerService } from '../server.service';
 
 
 @Component({
@@ -8,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VoteHostComponent implements OnInit {
 
-  constructor() { }
+  defaultCeleb: string='';
+  drawings: any[] = [];
+
+  constructor(private serverService: ServerService) {}
 
   ngOnInit(): void {
+    this.defaultCeleb = this.serverService.getGameState().defaultCeleb;
+    this.drawings = this.serverService.getGameState().drawings;
   }
 
 }

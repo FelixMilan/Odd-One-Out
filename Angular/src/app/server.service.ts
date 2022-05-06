@@ -108,6 +108,7 @@ export class ServerService {
           timeLeft, // in seconds (for VOTING status and DRAWING status)
           players, // array of player objects ({ name="NAME OF YOU", drawn=true/false, votedArtist="NAME OF OTHER PERSON" })
           drawings, // array of drawings ({ id=1, drawing=BASE64..., celebName="" (ONLY END STATUS), playerName="" (ONLY END STATUS) })
+          defaultCeleb, // the expected drawing (not odd one out)
           oddOneOut, // ID of drawing that is the odd one out image (ONLY VOTING STATUS)
         } = gameState;
         console.log(gameState);
