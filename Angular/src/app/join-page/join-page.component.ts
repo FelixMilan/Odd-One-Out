@@ -16,6 +16,7 @@ export class JoinPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.checkInterval = setInterval(() => {
+      console.log(this.serverService.getGameState())
        this.players = this.serverService.getGameState().players.map((player: any) => {
          return player?.name;
        });

@@ -12,3 +12,8 @@
 .squarelabel{
     margin: 20px 0px;
 }
+
+hr.linebreak{
+    border: 1px solid rgb(214, 129, 31);
+    width: 75%;
+}
