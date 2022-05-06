@@ -25,6 +25,11 @@ export class LobbyPageComponent implements OnInit {
     }, 500);
   }
 
+  startGame(): void {
+    if (!this.lobbyCode) return alert("Not in a lobby")
+    this.serverService.start(this.lobbyCode);
+  }
+
   ngOnDestroy(): void {
     if (this.checkInterval) {
       clearInterval(this.checkInterval);
