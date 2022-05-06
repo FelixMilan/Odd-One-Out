@@ -18,8 +18,8 @@ export class HomeComponent implements OnInit {
     this.serverService.create();
   }
 
-  addPlayer(nickname: string, lobbyCode: string): void {
-    this.serverService.join(nickname, lobbyCode);
+  addPlayer(): void {
+    this.serverService.join(this.nickname, this.lobbyCode);
   }
 
   constructor(private serverService: ServerService) { }

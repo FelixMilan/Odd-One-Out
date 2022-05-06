@@ -14,9 +14,9 @@
     <form class="formsection">
         <h2>JOIN GAME</h2>
         <label class="label" for="name">NAME:</label><br>
-        <input type="text" id="nickname" name="{{nickname}}" oninput="this.value = this.value.toUpperCase()" placeholder="ENTER NAME"><br>
+        <input type="text" id="nickname" value="{{nickname}}" oninput="this.value = this.value.toUpperCase()" placeholder="ENTER NAME"><br>
         <label class="label" for="roomid">UNIQUE ROOM ID:</label><br>
-        <input type="text" id="lobbyCode" name="{{lobbyCode}}" oninput="this.value = this.value.toUpperCase()" placeholder="ENTER ROOM ID"><br><br>
-        <input type="button" class="button" value="JOIN ROOM" (click)="addPlayer(nickname, lobbyCode)">
+        <input type="text" id="lobbyCode" value="{{lobbyCode}}" oninput="this.value = this.value.toUpperCase()" placeholder="ENTER ROOM ID"><br><br>
+        <input type="button" class="button" value="JOIN ROOM" (click)="addPlayer()">
     </form> 
 </div>
