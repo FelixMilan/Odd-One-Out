@@ -17,3 +17,7 @@ hr.linebreak{
     border: 1px solid rgb(214, 129, 31);
     width: 75%;
 }
+
+.lobbyinput{
+    display: block;
+}
