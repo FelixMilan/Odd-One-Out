@@ -13,16 +13,10 @@
     margin: 20px 0px;
     height: 100%;
     width: 100%;
+    display: inline-block;
 }
 
 .label{
     margin: 20px;
-}
-
-.outputs{
-    display: inline-block;
-}
-
-.lobbyinput{
-    display: inline-block;
+    display: inline;
 }
