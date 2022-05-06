@@ -16,7 +16,7 @@
         <label class="label" for="name">NAME:</label><br>
         <input type="text" id="nickname" [value]="nickname" (input)="setNickname($event)" placeholder="ENTER NAME"><br>
         <label class="label" for="roomid">UNIQUE ROOM ID:</label><br>
-        <input type="text" id="lobbyCode" [value]="nickname" (input)="setLobbyCode($event)" placeholder="ENTER ROOM ID"><br><br>
+        <input type="text" id="lobbyCode" [value]="lobbyCode" (input)="setLobbyCode($event)" placeholder="ENTER ROOM ID"><br><br>
         <input type="button" class="button" value="JOIN ROOM" (click)="addPlayer()">
     </form> 
 </div>

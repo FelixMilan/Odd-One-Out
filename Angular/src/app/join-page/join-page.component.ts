@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ServerService } from '../server.service';
 
 @Component({
   selector: 'app-join-page',
@@ -7,9 +8,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class JoinPageComponent implements OnInit {
 
-  constructor() { }
+  players: any[] = [];
+
+  constructor(public serverService: ServerService) { }
+
+  checkInterval: any=null;
 
   ngOnInit(): void {
+    this.checkInterval = setInterval(() => {
+       this.players = this.serverService.getGameState().players.map((player: any) => {
+         return player?.name;
+       });
+     , 150);
+  }
+
+  ngOnDestroy(): void {
+
+    if (this.checkInterval) {
+      clearInterval(this.checkInterval);
+    }
   }
 
 }
