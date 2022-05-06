@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { io } from "socket.io-client";
+import { Router } from "@angular/router"
 
 @Injectable({
   providedIn: 'root'
@@ -9,6 +10,7 @@ export class ServerService {
   socket: any;
   lobbyCode: string = '';
   gameState: any;
+  celebName?: string;
 
   inputCeleb(celebName: string): void {
     this.socket.emit('inputCeleb', celebName);
@@ -26,12 +28,29 @@ export class ServerService {
     this.socket.emit('voteArtist', drawingId);
   }
 
+  join(nickname: string, lobbyCode: string): void {
+    this.socket.emit('join', nickname, lobbyCode);
+  }
+
+  create(): void {
+    this.connect();
+    this.socket.emit('create');
+  }
+
+  start(): void {
+    this.socket.emit('start');
+  }
+
   getLobbyCode(): string {
     return this.lobbyCode;
   }
 
   getGameState(): any {
     return this.gameState;
+  }
+
+  getCelebName(): string | undefined {
+    return this.celebName;
   }
 
   connect(): void {
@@ -45,6 +64,8 @@ export class ServerService {
 
       this.socket.on('newGame', (lobbyCode: string) => {
         console.log(`New game created. Lobby code: ${lobbyCode}`);
+
+        this.router.navigate(["/", "/game/lobby-page"])
 
         this.lobbyCode = lobbyCode;
       });
@@ -67,7 +88,8 @@ export class ServerService {
       });
 
       this.socket.on('celebPicked', (celebName: string) => {
-        console.log(`${celebName} has been picked`);
+        console.log(`${celebName} has been picked for you`);
+        this.celebName = celebName;
       });
 
       this.socket.on('gameState', (gameState: any) => {
@@ -86,5 +108,5 @@ export class ServerService {
     });
   }
 
-  constructor() { }
+  constructor(public router: Router) { }
 }

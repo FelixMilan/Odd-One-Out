@@ -2,7 +2,6 @@ import { Placeholder } from '@angular/compiler/src/i18n/i18n_ast';
 import { prepareSyntheticPropertyName } from '@angular/compiler/src/render3/util';
 import { Component, OnInit } from '@angular/core';
 import { io } from 'socket.io-client';
-import { LobbyService } from '../lobby.service';
 import { ServerService } from '../server.service';
 
 @Component({
@@ -16,14 +15,14 @@ export class HomeComponent implements OnInit {
   lobbyCode: string = '';
 
   hostRoom(): void {
-    this.lobbyService.create();
+    this.serverService.create();
   }
 
   addPlayer(nickname: string, lobbyCode: string): void {
-    this.lobbyService.join(nickname, lobbyCode);
+    this.serverService.join(nickname, lobbyCode);
   }
 
-  constructor(private lobbyService: LobbyService, private serverService: ServerService) { }
+  constructor(private serverService: ServerService) { }
 
   ngOnInit(): void {
   }

@@ -1,5 +1,6 @@
 import { Component, ViewChild, OnInit } from '@angular/core';
 import { SignaturePad } from 'angular2-signaturepad';
+import { ServerService } from '../server.service';
 
 @Component({
   selector: 'app-drawing-canvas',
@@ -7,6 +8,7 @@ import { SignaturePad } from 'angular2-signaturepad';
   styleUrls: ['./drawing-canvas.component.css']
 })
 export class DrawingCanvasComponent {
+  
   title = 'drawing-canvas';
   @ViewChild(SignaturePad) signaturePad!: SignaturePad;
   public signaturePadOptions = {
@@ -20,6 +22,10 @@ export class DrawingCanvasComponent {
 
   drawClear() {
     this.signaturePad.clear();
+  }
+
+  getCeleb(){
+    return this.serverService.getCelebName();
   }
 
 
@@ -39,6 +45,10 @@ export class DrawingCanvasComponent {
     }
     const ia = new Uint8Array(byteNumbers);
     return new Blob([ia], {type: mimeString});
+
+  }
+  
+  constructor(private serverService: ServerService){
 
   }
 
