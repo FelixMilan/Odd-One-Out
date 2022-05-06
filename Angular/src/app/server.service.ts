@@ -65,9 +65,9 @@ export class ServerService {
       this.socket.on('newGame', (lobbyCode: string) => {
         console.log(`New game created. Lobby code: ${lobbyCode}`);
 
-        this.router.navigate(["/game/lobby-page"])
-
         this.lobbyCode = lobbyCode;
+
+        this.router.navigate(["/game/lobby-page"])
       });
 
       this.socket.on('joined',
