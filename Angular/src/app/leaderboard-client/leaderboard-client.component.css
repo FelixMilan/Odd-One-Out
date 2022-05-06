@@ -11,7 +11,7 @@
     position: flex;
 }
 
-  .button {
+  .button a{
     background-color: rgb(214, 129, 31);
   border: none;
   color: white;

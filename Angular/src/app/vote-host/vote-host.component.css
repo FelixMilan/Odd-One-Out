@@ -3,10 +3,12 @@
     width: 12em;
     background-color: rgb(214, 129, 31);
     margin: 20px;
+    justify-content: center;
 }
 
 .drawingoutput .squarelabel{
     display: inline-block;
+    justify-content: center;
 }
 
 .squarelabel{
@@ -14,9 +16,11 @@
     height: 100%;
     width: 100%;
     display: inline-block;
+    justify-content: center;
 }
 
 .label{
     margin: 20px;
     display: block;
+    justify-content: center;
 }
