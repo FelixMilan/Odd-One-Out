@@ -7,6 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LeaderboardHostComponent implements OnInit {
 
+  oddOneOutPlayer: string='';
+  oddOneOutCeleb: string='';
+
+  playerCorrect=[]
+  playerIncorrect=[];
+
   constructor() { }
 
   ngOnInit(): void {
