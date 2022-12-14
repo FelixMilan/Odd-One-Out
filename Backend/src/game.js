@@ -59,7 +59,8 @@ class Game {
     oddOneOutCeleb;
     oddOneOut;
 
-    timeLeft = config.maxDrawingTime;
+    drawingTimeLeft = config.maxDrawingTime;
+    votingTimeLeft = config.maxVotingTime;
 
     constructor(lobbyCode, adminClient){
         this.lobbyCode = lobbyCode;
@@ -201,7 +202,7 @@ class Game {
             player.drawingId = index;
         });
 
-        this.timeLeft = config.maxVotingTime;
+        this.drawingTimeLeft = config.maxVotingTime;
         this.tickVoting();
 
     }
@@ -209,11 +210,11 @@ class Game {
     tickDrawing = () => {
         this.checkGameStatus();
         if(this.status === GameStatus.DRAWING){
-            if(this.timeLeft <= 0) {
+            if(this.drawingTimeLeft <= 0) {
                 this.finishDrawing();
             }
             this.broadcastGameState();
-            this.timeLeft -= 1;
+            this.drawingTimeLeft -= 1;
             setTimeout(this.tickDrawing, 1000);
         }
     }
@@ -221,11 +222,11 @@ class Game {
     tickVoting = () => {
         this.checkGameStatus();
         if(this.status === GameStatus.VOTING) { 
-            if(this.timeLeft <= 0) {
+            if(this.votingTimeLeft <= 0) {
                 this.finishVoting();
             }
             this.broadcastGameState();
-            this.timeLeft -= 1;
+            this.votingTimeLeft -= 1;
             setTimeout(this.tickVoting, 1000);
         }
     }
@@ -278,7 +279,8 @@ class Game {
         const gameState = {
             lobbyCode: this.lobbyCode,
             status: this.status,
-            timeLeft: this.timeLeft,
+            drawingTimeLeft: this.timeLeft,
+            votingTimeLeft: this.timeLeft,
             players: this.players.map(player => {
                 return convertPlayerToInfoPlayer(player, this)
             }),
