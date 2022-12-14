@@ -279,8 +279,8 @@ class Game {
         const gameState = {
             lobbyCode: this.lobbyCode,
             status: this.status,
-            drawingTimeLeft: this.timeLeft,
-            votingTimeLeft: this.timeLeft,
+            drawingTimeLeft: this.drawingTimeLeft,
+            votingTimeLeft: this.votingTimeLeft,
             players: this.players.map(player => {
                 return convertPlayerToInfoPlayer(player, this)
             }),
