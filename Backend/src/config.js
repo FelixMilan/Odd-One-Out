@@ -1,5 +1,5 @@
 module.exports = {
     maxPlayers: 8,
-    maxDrawingTime: 60,
-    maxVotingTime: 20,
+    maxDrawingTime: 120,
+    maxVotingTime: 120,
 }

@@ -8,6 +8,10 @@ import { ServerService } from '../server.service';
 })
 export class LeaderboardHostComponent implements OnInit {
 
+  defaultPlayer: string='';
+  defaultCeleb: string='';
+  defaultDrawing: string='';
+
   oddOneOutPlayer: string='';
   oddOneOutCeleb: string='';
   oddOneOutDrawing: string='';
@@ -21,6 +25,10 @@ export class LeaderboardHostComponent implements OnInit {
     const oddOneOutDrawingId = this.serverService.getGameState().oddOneOut;
     const drawings = this.serverService.getGameState().drawings;
     const drawing = drawings.find((d: any) => d.id === oddOneOutDrawingId);
+
+    this.defaultPlayer = drawing?.playerName ?? "UNKNOWN";
+    this.defaultCeleb = drawing?.celebName ?? "UNKNOWN";
+    this.defaultDrawing = drawing?.drawing ?? "";
 
     this.oddOneOutPlayer = drawing?.playerName ?? "UNKNOWN";
     this.oddOneOutCeleb = drawing?.celebName ?? "UNKNOWN";
