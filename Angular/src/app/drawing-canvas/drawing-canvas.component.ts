@@ -25,7 +25,7 @@ export class DrawingCanvasComponent {
   }
 
   celebName: string = 'UNKNOWN';
-  timeLeft?: number;
+  drawingTimeLeft?: number;
 
   checkInterval: any=null;
 
@@ -35,7 +35,7 @@ export class DrawingCanvasComponent {
       if (celeb) {
         this.celebName = celeb;
       }
-      this.timeLeft = this.serverService.getGameState().timeLeft;
+      this.drawingTimeLeft = this.serverService.getGameState().drawingTimeLeft;
 
     }, 500);
   }

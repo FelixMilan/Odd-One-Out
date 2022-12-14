@@ -12,7 +12,7 @@ export class WritingScreenClientComponent implements OnInit {
 
   checkInterval: any=null;
   lobbyCode?: string;
-  timeLeft?: number;
+  votingTimeLeft?: number;
   celebName: string='';
 
   setCelebName(e:any): void {
@@ -27,7 +27,7 @@ export class WritingScreenClientComponent implements OnInit {
     this.lobbyCode = this.serverService.getLobbyCode();
 
     this.checkInterval = setInterval(() => {
-      this.timeLeft = this.serverService.getGameState().timeLeft;
+      this.votingTimeLeft = this.serverService.getGameState().votingTimeLeft;
     }, 500);
   }
 

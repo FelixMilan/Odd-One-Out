@@ -12,13 +12,13 @@ export class WritingScreenHostComponent implements OnInit {
 
   checkInterval: any=null;
   lobbyCode?: string;
-  timeLeft?: number;
+  votingTimeLeft?: number;
 
   ngOnInit(): void {
     this.lobbyCode = this.serverService.getLobbyCode();
 
     this.checkInterval = setInterval(() => {
-      this.timeLeft = this.serverService.getGameState().timeLeft;
+      this.votingTimeLeft = this.serverService.getGameState().votingTimeLeft;
     }, 500);
   }
 
